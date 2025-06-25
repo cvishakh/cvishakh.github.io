@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog – Vishakh Cheruparambath</title>
+  <meta name="description" content="Read blog posts by Vishakh Cheruparambath on robotics, ML and autonomous systems." />
+  <link rel="canonical" href="https://yourdomain.github.io/blog.html" />
+  <link rel="icon" href="./images/favicon.png" type="image/png" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      margin: 0;
+      padding: 2rem;
+      font-family: Helvetica, Arial, sans-serif;
+      color: #e8e8e8;
+      position: relative;
+      min-height: 100vh;
+      background-color: #000;
+    }
+
+    /* Background image */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: url('./images/bg_main.png') no-repeat center/cover;
+      background-color: #000;
+      z-index: -3;
+      pointer-events: none;
+    }
+
+    .home-button {
+      position: absolute;
+      top: 1.5rem;
+      right: 2rem;
+      background-color: #1a5fb4;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .home-button:hover {
+      background-color: #4190e1;
+      transform: translateY(-2px);
+    }
+
+    h1 {
+      text-align: center;
+      color: #bca9ff;
+      margin-bottom: 2rem;
+    }
+
+    p.intro {
+      text-align: center;
+      color: #ccc;
+      margin-bottom: 3rem;
+      font-size: 1rem;
+    }
+
+    .blog-container {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .blog-card {
+      display: flex;
+      gap: 1.5rem;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1.5rem;
+      border-radius: 1rem;
+      transition: background 0.3s ease, transform 0.2s ease;
+      align-items: flex-start;
+    }
+
+    .blog-card:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-4px);
+    }
+
+    .blog-thumbnail {
+      width: 140px;
+      height: auto;
+      border-radius: 0.5rem;
+      flex-shrink: 0;
+      object-fit: cover;
+    }
+
+    .blog-content {
+      flex: 1;
+    }
+
+    .blog-card h2 {
+      color: #4da6ff;
+      margin-bottom: 0.3rem;
+      font-size: 1.25rem;
+    }
+
+    .pub-date {
+      font-size: 0.8rem;
+      color: #aaa;
+      margin-bottom: 0.5rem;
+    }
+
+    .blog-card p {
+      margin: 0 0 1rem;
+      color: #ccc;
+      font-size: 0.95rem;
+    }
+
+    .blog-card a {
+      color: #4da6ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .blog-card a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 700px) {
+      .blog-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .blog-thumbnail {
+        width: 100%;
+        max-width: 300px;
+      }
+      .blog-content {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="home-button">Home</a>
+
+  <h1>Blog</h1>
+  <p class="intro">Insights into nature, trekking, and machine learning – written by Vishakh Cheruparambath</p>
+
+  <div class="blog-container">
+
+    <div class="blog-card">
+      <img src="images/rocket.png" alt="Behavior Trees Thumbnail" class="blog-thumbnail" />
+      <div class="blog-content">
+        <h2>How Behavior Trees Are Shaping Robotic Autonomy</h2>
+        <p class="pub-date">Published on June 10, 2024</p>
+        <p>A primer on how behavior trees simplify decision-making in complex robotic systems.</p>
+        <a href="https://medium.com/@yourusername/behavior-trees-robotics" target="_blank">Read on Medium →</a>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

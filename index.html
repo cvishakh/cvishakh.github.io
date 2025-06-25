@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vishakh Cheruparambath – ML Engineer & Working Student</title>
+
+  <link rel="icon" href="./images/favicon.png" type="image/png" />
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+  <!---- primary SEO meta –-->
+  <meta name="description" content="Portfolio of Vishakh Cheruparambath – ML Engineer & Working Student. Browse photos, articles, research interests and professional affiliations."/>
+  <meta name="keywords" content="Vishakh Cheruparambath, data analyst, research, portfolio, Siemens Mobility, FAU, HAL, photos, articles"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://l3th4l.github.io/"/>
+
+  <!---- Open Graph / Facebook –-->
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Vishakh Cheruparambath – ML Engineer & Working Student"/>
+  <meta property="og:description" content="Portfolio of Vishakh Cheruparambath – ML Engineer & Working Student. Browse photos, articles, research interests and professional affiliations."/>
+  <meta property="og:url" content="https://l3th4l.github.io/"/>
+  <meta property="og:image" content="https://l3th4l.github.io/images/og_thumbnail.png"/>
+
+  <!---- Twitter Card –-->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Vishakh Cheruparambath – ML Engineer & Working Student"/>
+  <meta name="twitter:description" content="Portfolio of Vishakh Cheruparambath – ML engineer & working student."/>
+  <meta name="twitter:image" content="https://l3th4l.github.io/images/og_thumbnail.png"/>
+
+  <!---- Structured data (JSON-LD) –-->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Vishakh Cheruparambath",
+    "url": "https://l3th4l.github.io/",
+    "jobTitle": "Masters Student & ML Engineer",
+    "affiliation": [
+      {
+        "@type": "Organization",
+        "name": "Siemens Mobility GmbH",
+        "url": "https://www.mobility.siemens.com/de/de.html"
+      },
+      {
+        "@type": "Organization",
+        "name": "Hindustan Aeronautics Limited (HAL)",
+        "url": "https://hal-india.co.in/"
+      },
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "Friedrich-Alexander-Universität Erlangen-Nürnberg (FAU)",
+        "url": "https://www.fau.de/"
+      }
+    ],
+    "sameAs": [
+      "https://www.mobility.siemens.com/de/de.html",
+      "https://www.fau.de/"
+    ],
+    "description": "Portfolio of Vishakh Cheruparambath – ml engineer and masters student with interests in self-driving cars, automotive sector and project management."
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0 }
+    body {
+      margin: 0; padding: 0;
+      /* use Doto as primary font */
+      font-family: Helvetica, Arial, sans-serif;
+      color: #e8e8e8; overflow-x: hidden; position: relative; min-height: 100vh;
+    }
+    /* Background */
+    body::before {
+      content: ''; position: fixed; top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: url('./images/bg_main.png') no-repeat center/cover;
+      background-color: #000;
+      z-index: -3; pointer-events: none;
+    }
+
+    /* Main content */
+    .content-wrapper {
+      min-height: 100vh;
+      display: flex; flex-direction: column; align-items: center;
+      padding: 5vh 1rem 8vh; gap: 2.5rem;
+      background: rgba(0,0,0,0.1);
+    }
+    header { text-align: center }
+    header h1 {
+      font-size: clamp(2.4rem, 5vw + .5rem, 3.5rem);
+      font-weight: 700; letter-spacing: .5px;
+    }
+    header p { margin-top: .25rem; opacity: .8; font-size: .95rem }
+
+    .cards {
+      display: flex; flex-wrap: wrap; gap: 1.5rem;
+      justify-content: center; width: 100%; max-width: 980px;
+      margin-bottom: 10rem;
+    }
+    .card {
+      flex: 1 1 200px; max-width: 220px;
+      background: rgba(12,18,40,.5); border-radius: 2rem;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 0 0 2px rgba(255,255,255,.07), 0 12px 32px -10px #000 inset;
+      text-decoration: none; overflow: hidden;
+      transition: transform .35s ease, box-shadow .35s ease;
+      display: flex; flex-direction: column; align-items: center;
+      color: #fff; /* inherit white text */
+    }
+    .card:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 0 0 2px rgba(255,255,255,.15), 0 22px 40px -10px #000 inset;
+    }
+    .card__visual {
+      width: 100%; aspect-ratio: 1/1; padding: 1.5rem;
+      display: flex; justify-content: center; align-items: center;
+    }
+    .card__visual img {
+      width: 100%; height: 100%; object-fit: cover;
+      border-radius: 1.5rem; border: 2px solid rgba(255,255,255,.0);
+      loading: lazy; decoding: async;
+    }
+    .card__label {
+      padding: 1rem; font-size: 1.1rem; font-weight: 600; text-align: center;
+      color: #fff;
+    }
+
+    .affiliations {
+      padding: 5vh 2rem; width: 100%; max-width: 1000px;
+      text-align: center; background: rgba(0,0,0,0.0);
+      border-top: 1px solid rgba(255,255,255,.1);
+    }
+    .affiliations h2 { font-size: 1.8rem; margin-bottom: 1rem; }
+
+    /* logo grid */
+    .affiliations__logos {
+      display: flex; justify-content: center; align-items: center;
+      gap: 2rem; flex-wrap: wrap; margin-top: 1rem;
+    }
+    .affiliations__logos img {
+      height: auto; width: 40vh; object-fit: contain;
+      transition: transform .2s ease; filter: brightness(0) invert(1);
+      loading: lazy; decoding: async;
+    }
+    .affiliations__logos a:hover img { transform: scale(1.1); }
+
+    @media (max-width:420px) { .card { flex: 1 1 90% } }
+
+    .hero {
+      padding: 4rem 1rem 2rem;
+      text-align: center;
+      background: transparent;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .hero__avatar {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      background-color: #0b0c1c; /* Dark circle backdrop */
+      padding: 6px; /* Creates the ring thickness */
+      box-shadow: 0 0 10px rgba(255,255,255,0.15);
+      margin-bottom: 1rem;
+    }
+
+    .hero__content h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin: 0.5rem 0;
+    }
+
+    .hero__content .gradient {
+      background: linear-gradient(to right, #4b6cb7, #182848);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero__desc {
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1rem;
+      opacity: 0.85;
+    }
+
+    .hero__location {
+      font-size: 0.95rem;
+      color: #ccc;
+    }
+
+    .hero__social a {
+      margin: 0 0.5rem;
+      color: #bbb;
+      font-size: 1.3rem;
+      transition: color 0.3s;
+    }
+
+    .hero__social a:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="content-wrapper">
+  <header style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+    <img src="./images/profileimage.jpg" alt="Vishakh Cheruparambath" class="hero__avatar"/>
+    <h1><span class="gradient">Vishakh Cheruparambath</span></h1>
+    <p class="hero__desc">
+      Masters student in Electromobility – developing autonomous systems with a focus on data, perception, and intelligent mobility.
+    </p>
+    <p class="hero__location"><i class="fas fa-map-marker-alt"></i> Fürth, Germany</p>
+    <div class="hero__social">
+      <a href="mailto:vishakh.cheruparambath@outlook.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/cvishakh/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/cvishakh" target="_blank"><i class="fab fa-github"></i></a>
+    </div>
+  </header>
+
+    <main class="cards">
+      <a class="card" href="timeline.html">
+        <div class="card__visual"><img src="./images/timeline.png" alt="Preview of career journery"/></div>
+        <div class="card__label">Profile</div>
+      </a>
+      <a class="card" href="photos.html">
+        <div class="card__visual"><img src="./images/photos.png" alt="Preview of photography"/></div>
+        <div class="card__label">Gallery</div>
+      </a>
+      <a class="card" href="blogs.html">
+        <div class="card__visual"><img src="./images/blogs.png" alt="Preview of blogs and articles"/></div>
+        <div class="card__label">Blog</div>
+      </a>
+      <a class="card" href="projects.html">
+        <div class="card__visual"><img src="./images/projects.png" alt="Preview of research projects"/></div>
+        <div class="card__label">Projects</div>
+      </a>
+    </main>
+
+    <section class="affiliations" aria-labelledby="affiliations-heading">
+      <h2 id="affiliations-heading">Affiliations</h2>
+      <div class="affiliations__logos">
+        <a href="https://www.fau.de/" target="_blank" rel="noopener noreferrer" title="FAU (Friedrich-Alexander-Universität)">
+          <img src="https://www.wp.rrze.fau.de/files/2021/11/fau-digital.svg" alt="FAU logo"/>
+        </a>
+        <a href="https://www.mobility.siemens.com/de/de.html" target="_blank" rel="noopener noreferrer" title="Siemens Mobility GmbH">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Siemens-logo.svg" alt="Siemens logo"/>
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer style="background-color: #11141f; padding: 1rem 0; text-align: center; color: #bbb; font-size: 0.9rem;">
+    © 2025 Vishakh Cheruparambath. All rights reserved.
+  </footer>
+</body>
+</html>

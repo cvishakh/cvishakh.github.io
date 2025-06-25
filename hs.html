@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Heliostat: Mouse-Controlled Normal & Reflection</title>
+  <style>
+    body, html { margin:0; padding:0; overflow:hidden; background:#111; }
+    canvas { display:block; }
+  </style>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+  <script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    // Fixed positions
+    const heliostat = { x: 0, y: 0 };
+    const sun       = { x: 0, y: 100 };
+    const receiver  = { x: 100, yOffset: -50, size: 30 };
+
+    let mouse = { x: 0, y: 0 };
+    window.addEventListener('pointermove', e => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    });
+
+    // Vector helpers
+    function normalize(v) {
+      const m = Math.hypot(v.x, v.y);
+      return { x: v.x/m, y: v.y/m };
+    }
+    function dot(a, b) {
+      return a.x*b.x + a.y*b.y;
+    }
+    function reflect(inc, norm) {
+      const d = dot(inc, norm);
+      return { x: inc.x - 2*d*norm.x, y: inc.y - 2*d*norm.y };
+    }
+    function drawArrow(x1,y1, x2,y2, color) {
+      const ang = Math.atan2(y2-y1, x2-x1);
+      ctx.strokeStyle = color;
+      ctx.fillStyle   = color;
+      ctx.lineWidth   = 2;
+      ctx.beginPath();
+      ctx.moveTo(x1,y1);
+      ctx.lineTo(x2,y2);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(x2,y2);
+      ctx.lineTo(x2 - 10*Math.cos(ang-0.3), y2 - 10*Math.sin(ang-0.3));
+      ctx.lineTo(x2 - 10*Math.cos(ang+0.3), y2 - 10*Math.sin(ang+0.3));
+      ctx.closePath();
+      ctx.fill();
+    }
+
+    function draw() {
+      // resize and recalc centers
+      canvas.width  = window.innerWidth;
+      canvas.height = window.innerHeight;
+      heliostat.x = canvas.width/2;
+      heliostat.y = canvas.height/2;
+      sun.x = canvas.width - 100;
+      receiver.y = canvas.height/2 + receiver.yOffset;
+
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+
+      // Draw sun
+      ctx.fillStyle = 'orange';
+      ctx.beginPath();
+      ctx.arc(sun.x, sun.y, 20, 0, 2*Math.PI);
+      ctx.fill();
+      ctx.fillStyle = '#fff';
+      ctx.textAlign = 'center';
+      ctx.font = '14px sans-serif';
+      ctx.fillText('Sun', sun.x, sun.y + 40);
+
+      // Draw receiver as square
+      const rx = receiver.x, ry = receiver.y, rs = receiver.size;
+      ctx.fillStyle = 'cyan';
+      ctx.fillRect(rx - rs/2, ry - rs/2, rs, rs);
+      ctx.fillStyle = '#fff';
+      ctx.fillText('Receiver', rx, ry + rs + 15);
+
+      // Compute vectors
+      const I = normalize({ x: heliostat.x - sun.x, y: heliostat.y - sun.y });
+      const N = normalize({ x: mouse.x - heliostat.x, y: mouse.y - heliostat.y });
+      const R = reflect(I, N);
+
+      // Draw incoming ray
+      drawArrow(sun.x, sun.y, heliostat.x, heliostat.y, 'orange');
+
+      // Draw normal
+      drawArrow(
+        heliostat.x, heliostat.y,
+        heliostat.x + N.x*60, heliostat.y + N.y*60,
+        'lime'
+      );
+
+      // Extend reflected ray to receiver's x-coordinate
+      let t = (receiver.x - heliostat.x) / R.x;
+      // ensure t positive
+      if (t < 0) t = 0;
+      const endX = heliostat.x + R.x * t;
+      const endY = heliostat.y + R.y * t;
+      drawArrow(heliostat.x, heliostat.y, endX, endY, 'yellow');
+
+      // Draw mirror line perpendicular to normal
+      const T = { x: -N.y, y: N.x };
+      ctx.strokeStyle = '#888';
+      ctx.lineWidth = 6;
+      ctx.beginPath();
+      ctx.moveTo(
+        heliostat.x - T.x*80,
+        heliostat.y - T.y*80
+      );
+      ctx.lineTo(
+        heliostat.x + T.x*80,
+        heliostat.y + T.y*80
+      );
+      ctx.stroke();
+
+      requestAnimationFrame(draw);
+    }
+    draw();
+  </script>
+</body>
+</html>

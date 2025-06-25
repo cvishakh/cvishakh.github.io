@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects – Vishakh Cheruparambath</title>
+  <link rel="icon" href="./images/favicon.png" type="image/png" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Helvetica, Arial, sans-serif;
+      background: #0b0c1c url('./images/bg_main.png') no-repeat center/cover;
+      color: #e8e8e8;
+      padding: 2rem;
+      min-height: 100vh;
+    }
+
+    .home-button {
+      position: absolute;
+      top: 1.5rem;
+      right: 2rem;
+      background-color: #1a5fb4;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .home-button:hover {
+      background-color: #4190e1;
+      transform: translateY(-2px);
+    }
+
+    h1 {
+      text-align: center;
+      color: #bca9ff;
+      margin-bottom: 3rem;
+    }
+
+    .projects-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 20px rgba(150, 150, 255, 0.2);
+    }
+
+    .card h2 {
+      font-size: 1.2rem;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #ccc;
+    }
+
+    .tags {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .tag {
+      background: #132647;
+      color: #4da6ff;
+      padding: 0.25rem 0.6rem;
+      border-radius: 0.5rem;
+      font-size: 0.75rem;
+    }
+
+    /* ────────── Modal ────────── */
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background: #0f111f;
+      padding: 2rem;
+      border-radius: 1rem;
+      max-width: 600px;
+      width: 90%;
+      color: #fff;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+      position: relative;
+    }
+
+    .modal-content h2 {
+      color: #bca9ff;
+      margin-bottom: 1rem;
+    }
+
+    .modal-content ul {
+      margin-top: 1rem;
+      padding-left: 1.2rem;
+    }
+
+    .modal-content ul li {
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .modal .close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 1.5rem;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .modal .tags {
+      margin-top: 1rem;
+    }
+
+    .github-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #ccc;
+      text-decoration: none;
+      font-size: 0.9rem;
+      margin-top: 1.5rem;
+      transition: color 0.3s;
+    }
+
+    .github-link:hover {
+      color: #4da6ff;
+    }
+
+    .github-link svg {
+      fill: currentColor;
+    }
+  </style>
+</head>
+<body>
+  <a href="./index.html" class="home-button">Home</a>
+  <h1>Projects Overview</h1>
+
+  <div class="projects-container">
+    <div class="card" onclick="openModal(0)">
+      <h2>AMR Logistic System</h2>
+      <p>Intracity Delivery AMR for Urban Navigation with ROS2 & path planning.</p>
+      <div class="tags">
+        <span class="tag">C++</span>
+        <span class="tag">ROS2</span>
+        <span class="tag">Navigation</span>
+        <span class="tag">Path Planning</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="projectModal">
+    <div class="modal-content" id="modalContent">
+      <span class="close" onclick="closeModal()">×</span>
+      <h2>AMR Logistic System</h2>
+      <p>Intracity Delivery Autonomous Mobile Robot for Urban Navigation System featuring fault-tolerant operation and seamless ROS2 integration.</p>
+
+      <!-- GitHub Link with Icon -->
+      <a href="https://github.com/yourusername/amr-logistic-system"
+         class="github-link"
+         target="_blank"
+         rel="noopener noreferrer">
+        <svg width="20" height="20" viewBox="0 0 16 16" aria-hidden="true">
+          <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 
+          2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+          0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52
+          -.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 
+          2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64
+          -3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08
+          -2.12 0 0 .67-.21 2.2.82a7.65 7.65 0 0 1 2-.27c.68 0 
+          1.36.09 2 .27 1.53-1.04 2.2-.82 
+          2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 
+          1.27.82 2.15 0 3.07-1.87 3.75-3.65 
+          3.95.29.25.54.73.54 1.48 0 1.07-.01 
+          1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 
+          0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+        </svg>
+        View Source
+      </a>
+
+      <h3 style="margin-top: 1.5rem;">Features:</h3>
+      <ul>
+        <li>Global Path Planner using Lanelet2 and GPS</li>
+        <li>Modular ROS2-based system architecture</li>
+        <li>Trajectory Planner with Quintic Bézier splines</li>
+        <li>Velocity profiling using Dynamic Window Approach</li>
+        <li>Gradient-based mapping with RPROP optimization</li>
+      </ul>
+
+      <h3 style="margin-top: 1.5rem;">Tech Stack:</h3>
+      <div class="tags">
+        <span class="tag">C++</span>
+        <span class="tag">ROS2</span>
+        <span class="tag">Lanelet2</span>
+        <span class="tag">Python</span>
+        <span class="tag">RPROP</span>
+        <span class="tag">OSM</span>
+        <span class="tag">Docker</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openModal(index) {
+      document.getElementById('projectModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('projectModal').style.display = 'none';
+    }
+
+    window.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeModal();
+    });
+  </script>
+</body>
+</html>
