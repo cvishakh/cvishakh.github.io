@@ -1,6 +1,6 @@
-# Vishakh Cheruparambath | Portfolio 
+# Vishakh Cheruparambath | My Web Space
 > Welcome to my personal space on the web! I'm an Automotive Enthusiast & ML Engineer passionate about intelligent systems and real-world innovation. Explore my projects, skills, and experience in one place. 
-Want to make one? – This website is built on a simple, clean, and responsive template tailored for Automotive, Robotics & AI Engineers. Showcasing my projects, experience, and skills through elegant design and interactive features that graps anyones attention.
+> Want to make one? – This website is built on a simple, clean, and responsive template tailored for Automotive, Robotics & AI Engineers. Showcasing my projects, experience, and skills through elegant design and interactive features that graps anyones attention.
 
 > https://cvishakh.github.io/
 
@@ -18,7 +18,7 @@ Want to make one? – This website is built on a simple, clean, and responsive t
 </p>
 
 ## Functions 📋
-⚡️ A simple, fully Responsive starter website\
+⚡️ A simple, fully responsive starter website\
 ⚡️ Valid HTML5 & CSS3\
 ⚡️ Easy to customize and integrate
 ⚡️ Smooth Navigation and Beautiful UI
@@ -26,14 +26,14 @@ Want to make one? – This website is built on a simple, clean, and responsive t
 ## Sections 📚
 This portfolio includes the following sections:
 
-✔️ HomePage: A brief about myself and contact details.
-✔️ Profile: A brief career timeline and background.
-✔️ Gallery: Snapshots from my journey through my lens.
-✔️ Blog: A list of blog articles published via [Medium](https://medium.com/).
-✔️ Projects: Showcase your development projects.
+✔️ **HomePage**: A brief about myself and contact details.  
+✔️ **Profile**: A brief career timeline and background.  
+✔️ **Gallery**: Snapshots from my journey through my lens.  
+✔️ **Blog**: A list of blog articles published via [Medium](https://medium.com/).  
+✔️ **Projects**: Showcase your development projects.
 
 
-## Steps by Step Procedure
+## Steps by Step Procedure 📋
 To try and implement your own portfolio using this simple UI, follow the steps:
 - Clone the repository to your local machine via HTTPS:
 ```
