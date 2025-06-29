@@ -1,6 +1,7 @@
 # Vishakh Cheruparambath | My Web Space
-> Welcome to my personal space on the web! I'm an Automotive Enthusiast & ML Engineer passionate about intelligent systems and real-world innovation. Explore my projects, skills, and experience in one place. 
-> Want to make one? – This website is built on a simple, clean, and responsive template tailored for Automotive, Robotics & AI Engineers. Showcasing my projects, experience, and skills through elegant design and interactive features that graps anyones attention.
+> Welcome to my personal space on the web! I'm an Automotive Enthusiast & ML Engineer passionate about intelligent systems and real-world innovation. Explore my projects, skills, and experience in one place.  
+>  
+> Want to make one? – This website is built on a simple, clean, and responsive template tailored for Automotive, Robotics & AI Engineers. Showcasing my projects, experience, and skills through elegant design and interactive features that grabs anyone’s attention.
 
 > https://cvishakh.github.io/
 
