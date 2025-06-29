@@ -85,6 +85,7 @@
       overflow: hidden;
       position: relative;
       transition: transform 0.3s ease;
+      break-inside: avoid;
     }
 
     .gallery__item:hover {
@@ -93,8 +94,10 @@
 
     .gallery__item img {
       width: 100%;
-      display: block;
       height: auto;
+      display: block;
+      object-fit: cover;
+      break-inside: avoid;
     }
 
     .meta {
