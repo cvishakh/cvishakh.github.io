@@ -154,17 +154,58 @@
   <p class="intro">Insights into nature, trekking, and machine learning – written by Vishakh Cheruparambath</p>
 
   <div class="blog-container">
+  <script>
+    async function fetchMediumBlogs() {
+      const username = "yourusername"; // Replace with your Medium username
+      const url = `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@${username}`;
 
-    <div class="blog-card">
-      <img src="images/rocket.png" alt="Behavior Trees Thumbnail" class="blog-thumbnail" />
-      <div class="blog-content">
-        <h2>How Behavior Trees Are Shaping Robotic Autonomy</h2>
-        <p class="pub-date">Published on June 10, 2024</p>
-        <p>A primer on how behavior trees simplify decision-making in complex robotic systems.</p>
-        <a href="https://medium.com/@yourusername/behavior-trees-robotics" target="_blank">Read on Medium →</a>
-      </div>
-    </div>
+      try {
+        const res = await fetch(url);
+        const data = await res.json();
+        const container = document.querySelector(".blog-container");
 
-  </div>
+        const posts = data.items.filter(item => item.categories.length > 0); // Only articles
+
+        posts.forEach(post => {
+          const card = document.createElement("div");
+          card.className = "blog-card";
+
+          const img = document.createElement("img");
+          img.className = "blog-thumbnail";
+          img.src = post.thumbnail || "images/default-thumb.png";
+          img.alt = post.title;
+
+          const content = document.createElement("div");
+          content.className = "blog-content";
+
+          const title = document.createElement("h2");
+          title.textContent = post.title;
+
+          const date = document.createElement("p");
+          date.className = "pub-date";
+          date.textContent = `Published on ${new Date(post.pubDate).toLocaleDateString()}`;
+
+          const desc = document.createElement("p");
+          desc.innerHTML = post.description.slice(0, 200) + "...";
+
+          const link = document.createElement("a");
+          link.href = post.link;
+          link.target = "_blank";
+          link.textContent = "Read on Medium →";
+
+          content.append(title, date, desc, link);
+          card.append(img, content);
+          container.appendChild(card);
+        });
+      } catch (err) {
+        console.error("Failed to load Medium blog posts", err);
+      }
+    }
+
+    fetchMediumBlogs();
+  </script>
+
+
+</div>
 </body>
 </html>
