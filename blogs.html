@@ -24,7 +24,6 @@
       background-color: #000;
     }
 
-    /* Background image */
     body::before {
       content: '';
       position: fixed;
@@ -153,10 +152,11 @@
   <h1>Blog</h1>
   <p class="intro">Insights into nature, trekking, and machine learning – written by Vishakh Cheruparambath</p>
 
-  <div class="blog-container">
+  <div class="blog-container"></div>
+
   <script>
     async function fetchMediumBlogs() {
-      const username = "cvishakh"; // Replace with  Medium username
+      const username = "cvishakh"; // ✅ Replace with medium username
       const url = `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@${username}`;
 
       try {
@@ -204,8 +204,5 @@
 
     fetchMediumBlogs();
   </script>
-
-
-</div>
 </body>
 </html>
