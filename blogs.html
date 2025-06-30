@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blog – Vishakh Cheruparambath</title>
-  <meta name="description" content="Read blog posts by Vishakh Cheruparambath on robotics, ML and autonomous systems." />
-  <link rel="canonical" href="https://yourdomain.github.io/blog.html" />
+  <meta name="description" content="Read blog posts by Vishakh Cheruparambath on nature, trekking and ML." />
+  <link rel="canonical" href="https://cvishakh.github.io/blogs.html" />
   <link rel="icon" href="./images/favicon.png" type="image/png" />
   <style>
     *, *::before, *::after {
@@ -156,7 +156,7 @@
 
   <script>
     async function fetchMediumBlogs() {
-      const username = "cvishakh"; // ✅ Replace with medium username
+      const username = "cvishakh"; // Replace with medium username
       const url = `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@${username}`;
 
       try {
@@ -172,8 +172,10 @@
 
           const img = document.createElement("img");
           img.className = "blog-thumbnail";
-          img.src = post.thumbnail || "images/default-thumb.png";
+          const imgMatch = post.content.match(/<img[^>]+src="([^">]+)"/);
+          img.src = imgMatch ? imgMatch[1] : "images/default-thumb.png";
           img.alt = post.title;
+
 
           const content = document.createElement("div");
           content.className = "blog-content";
