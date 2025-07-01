@@ -30,8 +30,8 @@ This portfolio includes the following sections:
 ✔️ **HomePage**: A brief about myself and contact details.  
 ✔️ **Profile**: A brief career timeline and background.  
 ✔️ **Gallery**: Snapshots from my journey through my lens.  
-✔️ **Blog**: A list of blog articles published via [Medium](https://medium.com/).  
-✔️ **Projects**: Showcase your development projects.
+✔️ **Blog**: A list of blog articles published via [Medium](https://medium.com/@cvishakh).  
+✔️ **Projects**: A list of completed projects.
 
 
 ## Steps by Step Procedure 📋
@@ -50,7 +50,6 @@ git clone https://github.com/cvishakh/cvishakh.github.io.git
 - I highly recommend to use [Github Pages](https://create-react-app.dev/docs/deployment/#github-pages) to deploy the website as EASIEST WAY.
 - To deploy your website, create github repository with your github username `<your-github-username>.github.io`. Please don't give any other name.
 - Push the generated code to the `main` branch of current repository.
-- <b>💡 Tip:</b> Make sure to set `analyticsId` from your Google Analytics account inside the Google Analytics script tag, if you want to use your own Google Analytics account.
 
 
 ## Tools Used 🛠️
