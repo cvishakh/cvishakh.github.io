@@ -99,40 +99,49 @@
       font-style: italic;
       margin-bottom: 0.5rem;
       color: #aaa;
-        }
+    }
 
-    .lang-switcher {
+    .lang-dropdown {
       position: absolute;
       top: 1.5rem;
-      right: 7.5rem; /* Adjusted to be beside the home button */
-      display: flex;
-      gap: 0.5rem;
+      right: 7.5rem;
       z-index: 10;
     }
 
-    .lang-switcher button {
-      background-color: #1a5fb4;
-      color: #fff;
+    .lang-icon {
+      background: none;
       border: none;
-      padding: 0.4rem 0.8rem;
-      border-radius: 6px;
-      font-weight: bold;
+      font-size: 1.5rem;
+      color: white;
       cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
-    .lang-switcher button:hover {
-      background-color: #4190e1;
-      transform: translateY(-1px);
+    .lang-menu {
+      display: none;
+      position: absolute;
+      top: 2.5rem;
+      right: 0;
+      background-color: #1a1a1a;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #00000077;
+      width: 180px;
     }
-    .lang-switcher button:focus {
-      outline: none;
-      box-shadow: 0 0 0 2px rgba(65, 144, 225, 0.5);
+
+    .lang-menu p {
+      margin: 0 0 0.5rem;
+      font-size: 0.9rem;
+      color: #ddd;
     }
-    .lang-switcher button:active {
-      transform: translateY(0);
-      box-shadow: none;
-    } 
+
+    .lang-menu select {
+      width: 100%;
+      padding: 0.3rem;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      background: #fff;
+      color: #000;
+    }
 
     ul {
       padding-left: 1.2rem;
@@ -167,9 +176,15 @@
 </head>
 <body>
   <a href="./index.html" class="home-button">Home</a>
-  <div class="lang-switcher">
-    <button onclick="switchLang('en')">🇬🇧 EN</button>
-    <button onclick="switchLang('de')">🇩🇪 DE</button>
+  <div class="lang-dropdown">
+    <button class="lang-icon" onclick="toggleLangMenu()">🌐</button>
+    <div class="lang-menu" id="langMenu">
+      <p>Select your language</p>
+      <select onchange="switchLang(this.value)">
+        <option value="en">English</option>
+        <option value="de">Deutsch</option>
+      </select>
+    </div>
   </div>
 
   <h1>Profile</h1>
@@ -275,23 +290,39 @@
       </ul>
     </div>
 
-  <script>
-    function switchLang(lang) {
-      const enBlocks = document.querySelectorAll('.lang-en');
-      const deBlocks = document.querySelectorAll('.lang-de');
-
-      if (lang === 'en') {
-        enBlocks.forEach(el => el.style.display = 'block');
-        deBlocks.forEach(el => el.style.display = 'none');
-      } else {
-        enBlocks.forEach(el => el.style.display = 'none');
-        deBlocks.forEach(el => el.style.display = 'block');
+    <script>
+      function toggleLangMenu() {
+        const menu = document.getElementById('langMenu');
+        menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
       }
-    }
 
-    switchLang('en');         // Setting default to EN
-  </script>
+      function switchLang(lang) {
+        const en = document.querySelectorAll('.lang-en');
+        const de = document.querySelectorAll('.lang-de');
 
+        if (lang === 'en') {
+          en.forEach(el => el.style.display = 'block');
+          de.forEach(el => el.style.display = 'none');
+        } else {
+          en.forEach(el => el.style.display = 'none');
+          de.forEach(el => el.style.display = 'block');
+        }
+
+        document.getElementById('langMenu').style.display = 'none';
+      }
+
+      // Auto-close dropdown when clicking outside
+      window.addEventListener('click', function (e) {
+        const menu = document.getElementById('langMenu');
+        const icon = document.querySelector('.lang-icon');
+        if (!menu.contains(e.target) && !icon.contains(e.target)) {
+          menu.style.display = 'none';
+        }
+      });
+
+      // Set default language
+      switchLang('en');
+    </script>
   </section>
 </body>
 </html>
