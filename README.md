@@ -42,7 +42,7 @@ git clone https://github.com/cvishakh/cvishakh.github.io.git
 ```
 
 - Modify the content in the <b>index.html</b> file to your corresponding career timeline, photos, blogs, and projects.
-- To update your academic and carer journeym, modify/edit `.\timeline.html`. 
+- To update your academic and carer journey, modify/edit `.\timeline.html`. 
 - Add or remove images from `.\photos` directory as per your requirement.
 - extract_metadata.py: Extracts GPS metadata (latitude & longitude) from JPEG images and generates a `photos_metadata.json` file for use in the photo gallery.
 - To connect and publish your blogs, use `.\blogs.html`.
