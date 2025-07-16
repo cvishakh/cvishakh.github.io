@@ -11,6 +11,7 @@
       margin: 0;
       padding: 0;
     }
+
     body {
       margin: 0;
       padding: 2rem;
@@ -21,6 +22,7 @@
       position: relative;
       min-height: 100vh;
     }
+
     body::before {
       content: '';
       position: fixed;
@@ -33,12 +35,14 @@
       z-index: -3;
       pointer-events: none;
     }
+
     h1 {
       text-align: center;
       color: #bca9ff;
       font-size: 2.2rem;
       margin-bottom: 3rem;
     }
+
     .timeline {
       position: relative;
       max-width: 800px;
@@ -46,12 +50,14 @@
       padding-left: 2rem;
       border-left: 2px solid #4d4d4d;
     }
+
     .event {
       position: relative;
       padding-left: 1.5rem;
       margin-bottom: 3rem;
       transition: opacity 0.4s ease, transform 0.4s ease;
     }
+
     .event::before {
       content: "";
       position: absolute;
@@ -64,6 +70,7 @@
       border: 2px solid #0b0c1c;
       transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     }
+
     .event:hover::before {
       background-color: #4da6ff;
       transform: scale(1.3);
@@ -79,53 +86,75 @@
       color: #4da6ff;
       margin-bottom: 0.4rem;
     }
+
     .title {
       font-size: 1.2rem;
       font-weight: 700;
       color: #ffffff;
       margin-bottom: 0.25rem;
     }
+
     .subtitle {
       font-size: 1rem;
       font-style: italic;
       margin-bottom: 0.5rem;
       color: #aaa;
     }
+
     .lang-dropdown {
       position: absolute;
       top: 1.5rem;
       right: 7.5rem;
       z-index: 10;
     }
+
     .lang-icon {
+      background: none;
       border: none;
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       color: white;
       cursor: pointer;
-      position: relative;
     }
-    .lang-badge {
+
+    .lang-menu {
+      display: none;
       position: absolute;
-      top: 0;
+      top: 2.5rem;
       right: 0;
-      font-size: 0.55rem;
-      background: #4da6ff;
-      color: #000;
-      padding: 1px 3px;
-      border-radius: 6px;
-      font-weight: bold;
-      transform: translate(40%, -50%);
+      background-color: #1a1a1a;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #00000077;
+      width: 180px;
     }
+
+    .lang-menu p {
+      margin: 0 0 0.5rem;
+      font-size: 0.9rem;
+      color: #ddd;
+    }
+
+    .lang-menu select {
+      width: 100%;
+      padding: 0.3rem;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      background: #fff;
+      color: #000;
+    }
+
     ul {
       padding-left: 1.2rem;
       list-style-type: disc;
     }
+
     li {
       font-size: 0.95rem;
       margin-bottom: 0.4rem;
       line-height: 1.5;
       color: #ddd;
     }
+
     .home-button {
       position: absolute;
       top: 1.5rem;
@@ -138,6 +167,7 @@
       font-weight: bold;
       transition: background-color 0.3s ease;
     }
+
     .home-button:hover {
       background-color: #4190e1;
       transform: translateY(-2px);
@@ -147,140 +177,154 @@
 <body>
   <a href="./index.html" class="home-button">Home</a>
   <div class="lang-dropdown">
-    <button class="lang-icon" onclick="toggleLanguage()">
-      🌐<span id="lang-label" class="lang-badge">EN</span>
-    </button>
-  </div>
-
-  <h1 class="lang-en">Profile</h1>
-  <h1 class="lang-de">Profil</h1>
-
-  <!-- Events with language toggle -->
-
-<section class="timeline">
-  <div class="event">
-    <div class="date">07.2024 – 05.2025</div>
-    <div class="title lang-en">Working Student – Process Automation and Data Analysis</div>
-    <div class="title lang-de">Werkstudent – Prozessautomatisierung und Datenanalyse</div>
-    <div class="subtitle">Siemens Mobility GmbH</div>
-    <ul>
-      <li class="lang-en">Developed VBA macros to automate repetitive tasks for process efficiency.</li>
-      <li class="lang-de">VBA-Makros entwickelt, um sich wiederholende Aufgaben effizienter zu gestalten.</li>
-      <li class="lang-en">Explored multi-agent LLM architectures to build use case bots for the configuration team.</li>
-      <li class="lang-de">Mehragenten-LLM-Architekturen untersucht, um Use-Case-Bots für das Konfigurationsteam zu entwickeln.</li>
-      <li class="lang-en">Created Power BI Kanban dashboard for rolling stock project insight, increasing analytical efficiency by 30%.</li>
-      <li class="lang-de">Power BI-Kanban-Dashboard für Einblicke in Schienenfahrzeugprojekte erstellt, analytische Effizienz um 30 % gesteigert.</li>
-      <li class="lang-en">Contributed to SAP GUI Scripting API, managed databases using SQL and Snowflake to support AI-powered applications.</li>
-      <li class="lang-de">Mitwirkung an der SAP GUI Scripting API, Datenbankmanagement mit SQL und Snowflake zur Unterstützung KI-basierter Anwendungen.</li>
-      <li class="lang-en">Tools: SiemensGPT, UiPath, Power Automate, Azure AI Foundry tools</li>
-      <li class="lang-de">Tools: SiemensGPT, UiPath, Power Automate, Azure AI Foundry Tools</li>
-    </ul>
-    <div style="margin-top: 0.5rem;">
-      <a href="./assets/Arbeit_Zeugnis_SIEMENS.pdf" target="_blank" style="color: #4da6ff; text-decoration: none;">
-        📎 <span class="lang-en">View Attachment</span><span class="lang-de">Anhang ansehen</span>
-      </a>
+    <button class="lang-icon" onclick="toggleLangMenu()">🌐</button>
+    <div class="lang-menu" id="langMenu">
+      <p>Select your language</p>
+      <select onchange="switchLang(this.value)">
+        <option value="en">English</option>
+        <option value="de">Deutsch</option>
+      </select>
     </div>
   </div>
 
-  <div class="event">
-    <div class="date">2024 – 2025</div>
-    <div class="title lang-en">Project Thesis – Vision-Based Interaction for Autonomous Mobile Robots</div>
-    <div class="title lang-de">Projektarbeit – Visionsbasierte Interaktion für autonome mobile Roboter</div>
-    <div class="subtitle">Institute FAPS</div>
-    <ul>
-      <li class="lang-en">Developed and implemented algorithms for robotic applications.</li>
-      <li class="lang-de">Algorithmen für robotische Anwendungen entwickelt und implementiert.</li>
-      <li class="lang-en">Conducted real-world testing on autonomous mobile robots.</li>
-      <li class="lang-de">Praxistests mit autonomen mobilen Robotern durchgeführt.</li>
-      <li class="lang-en">Optimized gesture recognition & behavior tree models.</li>
-      <li class="lang-de">Gestenerkennung und Behavior-Tree-Modelle optimiert.</li>
-      <li class="lang-en">Integrated multi-object detection model using ZED 2i stereo camera API.</li>
-      <li class="lang-de">Modell zur Mehrfachobjekterkennung mit ZED 2i Stereo-Kamera-API integriert.</li>
-      <li class="lang-en">Enhanced DevOps workflows with CI pipelines and ROS2.</li>
-      <li class="lang-de">DevOps-Workflows durch CI-Pipelines und ROS2 verbessert.</li>
-      <li class="lang-en">Stack: C++, Python, ROS2, ZED2i, Behavior Trees</li>
-      <li class="lang-de">Technologien: C++, Python, ROS2, ZED2i, Behavior Trees</li>
-    </ul>
-  </div>
-  <div class="event">
-    <div class="date">2022 – Present</div>
-    <div class="title lang-en">Master of Science</div>
-    <div class="title lang-de">Master of Science</div>
-    <div class="subtitle">Friedrich-Alexander-Universität Erlangen-Nürnberg</div>
-    <ul>
-      <li class="lang-en">Major in Electromobility-ACES</li>
-      <li class="lang-de">Major Elektromobilität-ACES</li>
-      <li class="lang-en">Focus on AI and Autonomous Driving</li>
-      <li class="lang-de">Schwerpunkt KI und autonomes Fahren</li>
-    </ul>
-    <div style="margin-top: 0.5rem;">
-      <a href="./assets/Notenuebersicht_FAU.pdf" target="_blank" style="color: #4da6ff; text-decoration: none;">
-        📎 <span class="lang-en">View Attachment</span><span class="lang-de">Anhang ansehen</span>
-      </a>
+  <h1>Profile</h1>
+
+  <section class="timeline">
+    <div class="event">
+      <div class="date">07.2024 – 05.2025</div>
+      <div class="title">Working Student – Process Automation and Data Analysis</div>
+      <div class="subtitle">
+        <a href="https://www.mobility.siemens.com/global/de/portfolio/fahrzeuge.html" target="_blank" rel="noopener noreferrer" style="color: #4da6ff; text-decoration: none;">
+          Siemens Mobility GmbH
+        </a>
+      </div>
+      <ul>
+        <li>Developed VBA macros to automate repetitive tasks for process efficiency.</li>
+        <li>Explored multi-agent LLM architectures to build use case bots for the configuration team</li>
+        <li>Created Power BI Kanban dashboard for rolling stock project insight, increasing analytical efficiency by 30%</li>
+        <li>Contributed to SAP GUI Scripting API, managed databases using SQL and Snowflake to support AI-powered applications</li>
+        <li>Tools: SiemensGPT, UiPath, Power Automate, Azure AI Foundry tools</li>
+      </ul>
+      <div style="margin-top: 0.5rem;">
+        <a href="./assets/Arbeit_Zeugnis_SIEMENS.pdf" target="_blank" style="color: #4da6ff; text-decoration: none;">
+          📎 View Attachment
+        </a>
+      </div>
     </div>
-  </div>
 
-  <div class="event">
-    <div class="date">2020 – 2021</div>
-    <div class="title lang-en">Apprenticeship – Project Management</div>
-    <div class="title lang-de">Praktikum – Projektmanagement</div>
-    <div class="subtitle">Hindustan Aeronautics Limited, Bangalore</div>
-    <ul>
-      <li class="lang-en">Managed product database of 11 assembly modules using IFS ERP.</li>
-      <li class="lang-de">Produktdatenbank von 11 Montagebaugruppen mit IFS ERP verwaltet.</li>
-      <li class="lang-en">Assigned job ticket and documentation of process workflow for engineering, and MRO.</li>
-      <li class="lang-de">Auftragsvergabe und Dokumentation von Prozessabläufen für Technik und Instandhaltung.</li>
-      <li class="lang-en">Prepared requirements, data pre-processing, and built interactive dashboards for workflow analysis.</li>
-      <li class="lang-de">Anforderungen vorbereitet, Daten vorverarbeitet und interaktive Dashboards zur Analyse erstellt.</li>
-      <li class="lang-en">Tools: IFS ERP, Excel-VBA, SAP MRO ERP, Advanced Excel</li>
-      <li class="lang-de">Tools: IFS ERP, Excel-VBA, SAP MRO ERP, Advanced Excel</li>
-    </ul>
-  </div>
+    <div class="event">
+      <div class="date">2024 – 2025</div>
+      <div class="title">Project Thesis – Vision-Based Interaction for Autonomous Mobile Robots</div>
+      <div class="subtitle">
+        <a href="https://www.faps.fau.de/curforsch/adaptive-und-benutzerfreundliche-kollaboration-von-menschen-und-autonomen-mobilen-robotern-durch-kontinuierlich-lernende-algorithmen/" target="_blank" rel="noopener noreferrer" style="color: #4da6ff; text-decoration: none;">
+          Institute FAPS
+        </a>
+      </div>
+      <ul>
+        <li>Developed and implemented algorithms for robotic applications</li>
+        <li>Conducted real-world testing on autonomous mobile robots</li>
+        <li>Optimized gesture recognition & behavior tree models</li>
+        <li>Integrated multi-object detection model using ZED 2i stereo camera API</li>
+        <li>Enhanced DevOps workflows with CI pipelines and ROS2</li>
+        <li>Stack: C++, Python, ROS2, ZED2i, Behavior Trees</li>
+      </ul>
+    </div>
 
-  <div class="event">
-    <div class="date">2016 – 2016</div>
-    <div class="title lang-en">Internship</div>
-    <div class="title lang-de">Praktikum</div>
-    <div class="subtitle">The Fertilizers and Chemicals Travancore Limited, Kochi</div>
-    <ul>
-      <li class="lang-en">Process planning, data analysis, database management, and documentation</li>
-      <li class="lang-de">Prozessplanung, Datenanalyse, Datenbankverwaltung und Dokumentation</li>
-    </ul>
-  </div>
+    <div class="event">
+      <div class="date">2022 – Present</div>
+      <div class="title">Master of Science</div>
+      <div class="subtitle">
+        <a href="https://www.aces.study.fau.eu/" target="_blank" rel="noopener noreferrer" style="color: #4da6ff; text-decoration: none;">
+          Friedrich-Alexander-Universität Erlangen-Nürnberg
+        </a>
+      </div>
+      <ul>
+        <li>Major in Electromobility-ACES</li>
+        <li>Focus on AI and Autonomous Driving</li>
+      </ul>
+      <div style="margin-top: 0.5rem;">
+        <a href="./assets/Notenuebersicht_FAU.pdf" target="_blank" style="color: #4da6ff; text-decoration: none;">
+          📎 View Attachment
+        </a>
+      </div>
+    </div>
 
-  <div class="event">
-    <div class="date">2015 – 2019</div>
-    <div class="title lang-en">Bachelor of Technology</div>
-    <div class="title lang-de">Bachelor of Technology</div>
-    <div class="subtitle">APJ Abdul Kalam Technological University, Kerala</div>
-    <ul>
-      <li class="lang-en">Major in Mechanical Engineering</li>
-      <li class="lang-de">Studiengang Maschinenbau</li>
-    </ul>
-  </div>
-</section>
+    <div class="event">
+      <div class="date">2020 – 2021</div>
+      <div class="title">Apprenticeship – Project Management</div>
+      <div class="subtitle">
+        <a href="https://hal-india.co.in/home" target="_blank" rel="noopener noreferrer" style="color: #4da6ff; text-decoration: none;">
+          Hindustan Aeronautics Limited, Bangalore
+        </a>
+      </div>
+      <ul>
+        <li>Managed product database of 11 assembly modules using IFS ERP</li>
+        <li>Assigned job ticket and documentation of process workflow for engineering, and MRO</li>
+        <li>Prepared requirements, data pre-processing, and built interactive dashboards for workflow analysis</li>
+        <li>Tools: IFS ERP, Excel-VBA, SAP MRO ERP, Advanced Excel</li>
+      </ul>
+    </div>
 
-  <script>
-    let currentLang = 'en';
-    function toggleLanguage() {
-      const enElements = document.querySelectorAll('.lang-en');
-      const deElements = document.querySelectorAll('.lang-de');
-      const label = document.getElementById('lang-label');
-      if (currentLang === 'en') {
-        enElements.forEach(el => el.style.display = 'none');
-        deElements.forEach(el => el.style.display = 'block');
-        currentLang = 'de';
-        label.textContent = 'DE';
-      } else {
-        enElements.forEach(el => el.style.display = 'block');
-        deElements.forEach(el => el.style.display = 'none');
-        currentLang = 'en';
-        label.textContent = 'EN';
+    <div class="event">
+      <div class="date">2016 – 2016</div>
+      <div class="title">Internship</div>
+      <div class="subtitle">
+        <a href="https://fact.co.in/" target="_blank" rel="noopener noreferrer" style="color: #4da6ff; text-decoration: none;">
+          The Fertilizers and Chemicals Travancore Limited, Kochi
+        </a>
+      </div>
+      <ul>
+        <li>Process planning, data analysis, database management, and documentation</li>
+      </ul>
+    </div>
+
+    <div class="event">
+      <div class="date">2015 – 2019</div>
+      <div class="title">Bachelor of Technology</div>
+      <div class="subtitle">
+        <a href="https://ktu.edu.in/" target="_blank" rel="noopener noreferrer" style="color: #4da6ff; text-decoration: none;">
+          APJ Abdul Kalam Technological University, Kerala
+        </a>
+      </div>
+      <ul>
+        <li>Major in Mechanical Engineering</li>
+      </ul>
+    </div>
+
+    <script>
+      function toggleLangMenu() {
+        const menu = document.getElementById('langMenu');
+        menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
       }
-    }
-    window.onload = () => {
-      document.querySelectorAll('.lang-de').forEach(el => el.style.display = 'none');
-    };
-  </script>
+
+      function switchLang(lang) {
+        const en = document.querySelectorAll('.lang-en');
+        const de = document.querySelectorAll('.lang-de');
+
+        if (lang === 'en') {
+          en.forEach(el => el.style.display = 'block');
+          de.forEach(el => el.style.display = 'none');
+        } else {
+          en.forEach(el => el.style.display = 'none');
+          de.forEach(el => el.style.display = 'block');
+        }
+
+        document.getElementById('langMenu').style.display = 'none';
+      }
+
+      // Auto-close dropdown when clicking outside
+      window.addEventListener('click', function (e) {
+        const menu = document.getElementById('langMenu');
+        const icon = document.querySelector('.lang-icon');
+        if (!menu.contains(e.target) && !icon.contains(e.target)) {
+          menu.style.display = 'none';
+        }
+      });
+
+      // Set default language
+      switchLang('en');
+    </script>
+  </section>
 </body>
 </html>
+<!-- End of timeline.html -->
