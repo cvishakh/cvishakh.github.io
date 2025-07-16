@@ -176,17 +176,6 @@
 </head>
 <body>
   <a href="./index.html" class="home-button">Home</a>
-  <div class="lang-dropdown">
-    <button class="lang-icon" onclick="toggleLangMenu()">🌐</button>
-    <div class="lang-menu" id="langMenu">
-      <p>Select your language</p>
-      <select onchange="switchLang(this.value)">
-        <option value="en">English</option>
-        <option value="de">Deutsch</option>
-      </select>
-    </div>
-  </div>
-
   <h1>Profile</h1>
 
   <section class="timeline">
@@ -290,40 +279,6 @@
         <li>Major in Mechanical Engineering</li>
       </ul>
     </div>
-
-    <script>
-      function toggleLangMenu() {
-        const menu = document.getElementById('langMenu');
-        menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
-      }
-
-      function switchLang(lang) {
-        const en = document.querySelectorAll('.lang-en');
-        const de = document.querySelectorAll('.lang-de');
-
-        if (lang === 'en') {
-          en.forEach(el => el.style.display = 'block');
-          de.forEach(el => el.style.display = 'none');
-        } else {
-          en.forEach(el => el.style.display = 'none');
-          de.forEach(el => el.style.display = 'block');
-        }
-
-        document.getElementById('langMenu').style.display = 'none';
-      }
-
-      // Auto-close dropdown when clicking outside
-      window.addEventListener('click', function (e) {
-        const menu = document.getElementById('langMenu');
-        const icon = document.querySelector('.lang-icon');
-        if (!menu.contains(e.target) && !icon.contains(e.target)) {
-          menu.style.display = 'none';
-        }
-      });
-
-      // Set default language
-      switchLang('en');
-    </script>
   </section>
 </body>
 </html>
