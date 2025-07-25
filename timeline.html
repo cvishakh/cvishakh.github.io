@@ -132,32 +132,67 @@
     }
 
     .resume-button {
-    position: fixed;
-    bottom: 1.5rem;
-    left: 2rem;
-    background-color: #1a5fb4;
-    color: #fff;
-    padding: 0.6rem 1.2rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    z-index: 1000;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
+      position: absolute;
+      top: 1.5rem;
+      right: 7.5rem; /* Adjust spacing from right (next to Home) */
+      background-color: #1a5fb4;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
 
-  .resume-button:hover {
-    background-color: #4190e1;
-    transform: translateY(-2px);
-  }
-  
+    .resume-button:hover {
+      background-color: #4190e1;
+      transform: translateY(-2px);
+    }
+
+    .resume-button strong {
+      font-weight: 600;
+    }
+
+    .resume-button span {
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .timeline {
+        padding-left: 1rem;
+      }
+
+      .event::before {
+        left: -0.8rem;
+        width: 0.7rem;
+        height: 0.7rem;
+      }
+
+      .home-button, .resume-button {
+        top: 1rem;
+        right: 1rem;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+      }
+    }
+
+
   </style>
 </head>
 <body>
   <a href="./index.html" class="home-button">Home</a>
+  <a href="./assets/CV_Vishakh_Cheruparambath_EN.pdf" download class="resume-button">
+    <strong>Resume</strong> <span style="margin-left: 4px;">&#x2B07;</span>
+  </a>
+
   <h1>Profile</h1>
 
   <section class="timeline">
@@ -264,11 +299,6 @@
       </ul>
     </div>
   </section>
-
-  <!-- Resume Download Button -->
-  <a href="./assets/CV_Vishakh_Cheruparambath_EN.pdf" download class="resume-button">
-    <strong>Resume</strong> <span style="margin-left: 4px;">&#x2B07;</span>
-  </a>
 </body>
 </html>
 <!-- End of timeline.html -->
