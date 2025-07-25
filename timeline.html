@@ -130,6 +130,30 @@
       background-color: #4190e1;
       transform: translateY(-2px);
     }
+
+    .resume-button {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 2rem;
+    background-color: #1a5fb4;
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  .resume-button:hover {
+    background-color: #4190e1;
+    transform: translateY(-2px);
+  }
+  
   </style>
 </head>
 <body>
@@ -240,6 +264,11 @@
       </ul>
     </div>
   </section>
+
+  <!-- Resume Download Button -->
+  <a href="./assets/CV_Vishakh_Cheruparambath_EN.pdf" download class="resume-button">
+    <strong>Resume</strong> <span style="margin-left: 4px;">&#x2B07;</span>
+  </a>
 </body>
 </html>
 <!-- End of timeline.html -->
