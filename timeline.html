@@ -6,6 +6,13 @@
   <title>Profile – Vishakh Cheruparambath</title>
   <link rel="icon" href="./images/favicon.png" type="image/png" />
   <style>
+    :root {
+      --highlight: #4da6ff;
+      --bg-dark: #0b0c1c;
+      --text-light: #e8e8e8;
+      --text-muted: #aaa;
+    }
+
     *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
@@ -16,8 +23,8 @@
       margin: 0;
       padding: 2rem;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #e8e8e8;
-      background-color: #0b0c1c;
+      color: var(--text-light);
+      background-color: var(--bg-dark);
       overflow-x: hidden;
       position: relative;
       min-height: 100vh;
@@ -43,6 +50,30 @@
       margin-bottom: 3rem;
     }
 
+    /* Navbar */
+    .navbar {
+      position: absolute;
+      top: 1.5rem;
+      right: 2rem;
+      display: flex;
+      gap: 1rem;
+    }
+
+    .navbar a {
+      background-color: #1a5fb4;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .navbar a:hover {
+      background-color: #4190e1;
+      transform: translateY(-2px);
+    }
+
     .timeline {
       position: relative;
       max-width: 800px;
@@ -61,29 +92,26 @@
     .event::before {
       content: "";
       position: absolute;
-      left: -1.1rem;
-      top: 0.4rem;
+      left: -1.3rem;
+      top: 0.6rem;
       width: 0.9rem;
       height: 0.9rem;
       background-color: #2a2d3e;
       border-radius: 50%;
-      border: 2px solid #0b0c1c;
+      border: 2px solid var(--bg-dark);
       transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .event:hover::before {
-      background-color: #4da6ff;
+      background-color: var(--highlight);
       transform: scale(1.3);
-      box-shadow: 0 0 8px #4da6ff, 0 0 16px #4da6ff33;
+      box-shadow: 0 0 8px var(--highlight), 0 0 16px #4da6ff33;
     }
-    .event.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
+
     .date {
       font-size: 0.95rem;
       font-weight: bold;
-      color: #4da6ff;
+      color: var(--highlight);
       margin-bottom: 0.4rem;
     }
 
@@ -98,7 +126,7 @@
       font-size: 1rem;
       font-style: italic;
       margin-bottom: 0.5rem;
-      color: #aaa;
+      color: var(--text-muted);
     }
 
     ul {
@@ -113,48 +141,14 @@
       color: #ddd;
     }
 
-    .home-button {
-      position: absolute;
-      top: 1.5rem;
-      right: 2rem;
-      background-color: #1a5fb4;
-      color: #fff;
-      padding: 0.5rem 1rem;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
-
-    .home-button:hover {
-      background-color: #4190e1;
-      transform: translateY(-2px);
-    }
-
-    .resume-button {
-      position: absolute;
-      top: 1.5rem;
-      right: 7.5rem; /* Adjust spacing from right (next to Home) */
-      background-color: #1a5fb4;
-      color: #fff;
-      padding: 0.5rem 1rem;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-
-    .resume-button:hover {
-      background-color: #4190e1;
-      transform: translateY(-2px);
-    }
-
-    .resume-button strong {
-      font-weight: 600;
-    }
-
-    .resume-button span {
+    .attachment {
+      margin-top: 0.8rem;
       font-size: 0.9rem;
+    }
+
+    .attachment a {
+      color: var(--highlight);
+      text-decoration: none;
     }
 
     @media (max-width: 600px) {
@@ -171,27 +165,32 @@
       }
 
       .event::before {
-        left: -0.8rem;
+        left: -1rem;
         width: 0.7rem;
         height: 0.7rem;
       }
 
-      .home-button, .resume-button {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-end;
         top: 1rem;
         right: 1rem;
+      }
+
+      .navbar a {
         padding: 0.4rem 0.8rem;
         font-size: 0.9rem;
       }
     }
-
-
   </style>
 </head>
 <body>
-  <a href="./index.html" class="home-button">Home</a>
-  <a href="./assets/CV_Vishakh_Cheruparambath_EN.pdf" download class="resume-button">
-    Resume <span style="margin-left: 4px;">&#x2B07;</span>
-  </a>
+  <div class="navbar">
+    <a href="./index.html">Home</a>
+    <a href="./assets/CV_Vishakh_Cheruparambath_EN.pdf" download>
+      Resume <span style="margin-left: 4px;">&#x2B07;</span>
+    </a>
+  </div>
 
   <h1>Profile</h1>
   <section class="timeline">
@@ -199,7 +198,7 @@
       <div class="date">07.2024 – 05.2025</div>
       <div class="title">Working Student – Process Automation and Data Analysis</div>
       <div class="subtitle">
-        <a href="https://www.mobility.siemens.com/global/de/portfolio/fahrzeuge.html" target="_blank" rel="noopener noreferrer" style="color: #4da6ff; text-decoration: none;">
+        <a href="https://www.mobility.siemens.com/global/de/portfolio/fahrzeuge.html" target="_blank" rel="noopener noreferrer" style="color: var(--highlight); text-decoration: none;">
           Siemens Mobility GmbH
         </a>
       </div>
@@ -207,10 +206,8 @@
         <li>Explored multi-agent LLM architectures to build use case bots for the configuration team</li>
         <li>Tools: SiemensGPT, UiPath, Power Apps, Azure AI Foundry tools</li>
       </ul>
-      <div style="margin-top: 0.5rem;">
-        <a href="./assets/Arbeit_Zeugnis_HAL.pdf" target="_blank" style="color: #4da6ff; text-decoration: none;">
-          📎 View Attachment
-        </a>
+      <div class="attachment">
+        <a href="./assets/Arbeit_Zeugnis_HAL.pdf" target="_blank">📎 View Attachment</a>
       </div>
     </div>
 
@@ -218,7 +215,7 @@
       <div class="date">2024 – 2025</div>
       <div class="title">Project Thesis – Vision-Based Interaction for Autonomous Mobile Robots</div>
       <div class="subtitle">
-        <a href="https://www.faps.fau.de/curforsch/adaptive-und-benutzerfreundliche-kollaboration-von-menschen-und-autonomen-mobilen-robotern-durch-kontinuierlich-lernende-algorithmen/" target="_blank" rel="noopener noreferrer" style="color: #4da6ff; text-decoration: none;">
+        <a href="https://www.faps.fau.de/curforsch/adaptive-und-benutzerfreundliche-kollaboration-von-menschen-und-autonomen-mobilen-robotern-durch-kontinuierlich-lernende-algorithmen/" target="_blank" rel="noopener noreferrer" style="color: var(--highlight); text-decoration: none;">
           Institute FAPS
         </a>
       </div>
@@ -232,7 +229,7 @@
       <div class="date">2022 – Present</div>
       <div class="title">Master of Science</div>
       <div class="subtitle">
-        <a href="https://www.aces.study.fau.eu/" target="_blank" rel="noopener noreferrer" style="color: #4da6ff; text-decoration: none;">
+        <a href="https://www.aces.study.fau.eu/" target="_blank" rel="noopener noreferrer" style="color: var(--highlight); text-decoration: none;">
           Friedrich-Alexander-Universität Erlangen-Nürnberg
         </a>
       </div>
@@ -240,10 +237,8 @@
         <li>Major in Electromobility-ACES</li>
         <li>Focus on AI and Autonomous Driving</li>
       </ul>
-      <div style="margin-top: 0.5rem;">
-        <a href="./assets/Notenuebersicht_FAU.pdf" target="_blank" style="color: #4da6ff; text-decoration: none;">
-          📎 View Attachment
-        </a>
+      <div class="attachment">
+        <a href="./assets/Notenuebersicht_FAU.pdf" target="_blank">📎 View Attachment</a>
       </div>
     </div>
 
@@ -251,7 +246,7 @@
       <div class="date">2020 – 2021</div>
       <div class="title">Apprenticeship – Project Management</div>
       <div class="subtitle">
-        <a href="https://hal-india.co.in/home" target="_blank" rel="noopener noreferrer" style="color: #4da6ff; text-decoration: none;">
+        <a href="https://hal-india.co.in/home" target="_blank" rel="noopener noreferrer" style="color: var(--highlight); text-decoration: none;">
           Hindustan Aeronautics Limited, Bangalore
         </a>
       </div>
@@ -260,10 +255,8 @@
         <li>Assigned job tickets and documented process workflows for engineering and MRO</li>
         <li>Tools: IFS ERP, Excel-VBA, SAP MRO ERP, Advanced Excel</li>
       </ul>
-      <div style="margin-top: 0.5rem;">
-        <a href="./assets/HAL_Reference_Letter.pdf" target="_blank" style="color: #4da6ff; text-decoration: none;">
-          📎 View Attachment
-        </a>
+      <div class="attachment">
+        <a href="./assets/HAL_Reference_Letter.pdf" target="_blank">📎 View Attachment</a>
       </div>
     </div>
 
@@ -271,7 +264,7 @@
       <div class="date">2016 – 2016</div>
       <div class="title">Internship</div>
       <div class="subtitle">
-        <a href="https://fact.co.in/" target="_blank" rel="noopener noreferrer" style="color: #4da6ff; text-decoration: none;">
+        <a href="https://fact.co.in/" target="_blank" rel="noopener noreferrer" style="color: var(--highlight); text-decoration: none;">
           The Fertilizers and Chemicals Travancore Limited, Kochi
         </a>
       </div>
@@ -284,7 +277,7 @@
       <div class="date">2015 – 2019</div>
       <div class="title">Bachelor of Technology</div>
       <div class="subtitle">
-        <a href="https://ktu.edu.in/" target="_blank" rel="noopener noreferrer" style="color: #4da6ff; text-decoration: none;">
+        <a href="https://ktu.edu.in/" target="_blank" rel="noopener noreferrer" style="color: var(--highlight); text-decoration: none;">
           APJ Abdul Kalam Technological University, Kerala
         </a>
       </div>
