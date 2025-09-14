@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Vishakh Cheruparambath – ML Engineer</title>
+  <title>Vishakh Cheruparambath</title>
 
   <link rel="icon" href="./images/favicon.png" type="image/png" />
 
@@ -14,22 +14,22 @@
 
 
   <!---- primary SEO meta –-->
-  <meta name="description" content="Portfolio of Vishakh Cheruparambath – ML Engineer. Browse photos, articles, research interests and professional affiliations."/>
-  <meta name="keywords" content="Vishakh Cheruparambath, data analyst, research, portfolio, Siemens Mobility, FAU, HAL, photos, articles"/>
+  <meta name="description" content="Portfolio of Vishakh Cheruparambath. Browse photos, articles, research interests and career timeline."/>
+  <meta name="keywords" content="Vishakh Cheruparambath, data analyst, research, portfolio, EOS, Siemens Mobility, FAU, HAL, photos, articles"/>
   <meta name="robots" content="index, follow"/>
   <link rel="canonical" href="https://cvishakh.github.io/"/>
 
   <!---- Open Graph / Facebook –-->
   <meta property="og:type" content="website"/>
-  <meta property="og:title" content="Vishakh Cheruparambath – ML Engineer"/>
-  <meta property="og:description" content="Portfolio of Vishakh Cheruparambath – ML Engineer. Browse photos, articles, research interests and professional affiliations."/>
+  <meta property="og:title" content="Vishakh Cheruparambath"/>
+  <meta property="og:description" content="Portfolio of Vishakh Cheruparambath. Browse photos, articles, research interests and career timeline."/>
   <meta property="og:url" content="https://cvishakh.github.io/"/>
   <meta property="og:image" content="https://cvishakh.github.io/images/thumbnail.png"/>
 
   <!---- Twitter Card –-->
   <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Vishakh Cheruparambath – ML Engineer"/>
-  <meta name="twitter:description" content="Portfolio of Vishakh Cheruparambath – ML Engineer"/>
+  <meta name="twitter:title" content="Vishakh Cheruparambath"/>
+  <meta name="twitter:description" content="Portfolio of Vishakh Cheruparambath"/>
   <meta name="twitter:image" content="https://cvishakh.github.io/images/thumbnail.png"/>
 
   <!---- Structured data (JSON-LD) –-->
@@ -39,7 +39,7 @@
     "@type": "Person",
     "name": "Vishakh Cheruparambath",
     "url": "https://cvishakh.github.io/",
-    "jobTitle": "Masters Student & ML Engineer",
+    "jobTitle": "Masters Student",
     "affiliation": [
       {
         "@type": "Organization",
@@ -61,7 +61,7 @@
       "https://www.mobility.siemens.com/de/de.html",
       "https://www.fau.de/"
     ],
-    "description": "Portfolio of Vishakh Cheruparambath – ML Engineer and masters student with interests in self-driving cars, automotive sector and project management."
+    "description": "Portfolio of Vishakh Cheruparambath"
   }
   </script>
 
@@ -130,23 +130,29 @@
     }
 
     .affiliations {
-      padding: 5vh 2rem; width: 100%; max-width: 1000px;
-      text-align: center; background: rgba(0,0,0,0.0);
-      border-top: 1px solid rgba(255,255,255,.1);
+      padding: 20px 0;
+      text-align: center;
     }
-    .affiliations h2 { font-size: 1.8rem; margin-bottom: 1rem; }
 
-    /* logo grid */
     .affiliations__logos {
-      display: flex; justify-content: center; align-items: center;
-      gap: 2rem; flex-wrap: wrap; margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap; /* allows stacking on smaller screens */
     }
+
     .affiliations__logos img {
-      height: auto; width: 40vh; object-fit: contain;
-      transition: transform .2s ease; filter: brightness(0) invert(1);
-      loading: lazy; decoding: async;
+      height: 40px;
+      max-width: 120px;
+      object-fit: contain;
+      filter: grayscale(100%) opacity(0.6); /* gray + slightly dim */
+      transition: filter 0.3s ease, opacity 0.3s ease;
     }
-    .affiliations__logos a:hover img { transform: scale(1.1); }
+
+    .affiliations__logos img:hover {
+      filter: grayscale(0%) opacity(1); /* full color on hover */
+    }
 
     @media (max-width:420px) { .card { flex: 1 1 90% } }
 
@@ -214,12 +220,14 @@
     <img src="./images/profileimage.jpg" alt="Vishakh Cheruparambath" class="hero__avatar"/>
     <h1><span class="gradient">Vishakh Cheruparambath</span></h1>
     <p class="hero__desc">
-      Masters student in Electromobility at FAU – exploring the intersection of AI, autonomy, and clean mobility. Passionate about sustainable technologies and innovative data-driven solutions.
+      Masters student in Electromobility at FAU, Germany – trying to turn ideas into intelligent systems. Passionate about sustainable technologies and innovative data-driven solutions.
     </p>
     <p class="hero__location"><i class="fas fa-map-marker-alt"></i> Fürth, Germany</p>
     <div class="hero__social">
       <a href="mailto:vishakh.cheruparambath@outlook.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://x.com/cvishakh_" target="_blank"><i class="fab fa-twitter"></i></a>
       <a href="https://www.linkedin.com/in/cvishakh/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.xing.com/profile/Vishakh_Cheruparambath/" target="_blank"><i class="fab fa-xing"></i></a>
       <a href="https://github.com/cvishakh" target="_blank"><i class="fab fa-github"></i></a>
     </div>
   </header>
@@ -251,6 +259,9 @@
         </a>
         <a href="https://www.mobility.siemens.com/de/de.html" target="_blank" rel="noopener noreferrer" title="Siemens Mobility GmbH">
           <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Siemens-logo.svg" alt="Siemens logo"/>
+        </a>
+        <a href="https://www.eos.info" target="_blank" rel="noopener noreferrer" title="EOS GmbH">
+          <img src="./images/EOS_logo_white.svg" alt="EOS GmbH logo"/>
         </a>
       </div>
     </section>
