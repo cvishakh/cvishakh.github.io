@@ -143,15 +143,22 @@
     }
 
     .affiliations__logos img {
-      height: 40px;
-      max-width: 120px;
+      height: 60px;
+      max-width: 160px;
       object-fit: contain;
-      filter: grayscale(100%) opacity(0.6); /* gray + slightly dim */
-      transition: filter 0.3s ease, opacity 0.3s ease;
+      filter: none;
+      transition: transform 0.3s ease;
     }
 
     .affiliations__logos img:hover {
-      filter: grayscale(0%) opacity(1); /* full color on hover */
+      transform: scale(1.05); /* optional: subtle zoom on hover */
+    }
+
+    .affiliations h2 {
+    font-size: 1.8rem;   /* increase heading size */
+    font-weight: 700;    /* make it bold */
+    margin-bottom: 1rem; /* add space below */
+    color: #fff;         /* ensure it’s bright */
     }
 
     @media (max-width:420px) { .card { flex: 1 1 90% } }
