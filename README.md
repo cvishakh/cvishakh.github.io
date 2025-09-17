@@ -1,7 +1,7 @@
-# Vishakh Cheruparambath | My Web Space
-> Welcome to my personal space on the web! I'm an Automotive Enthusiast & ML Engineer passionate about intelligent systems and real-world innovation. Explore my projects, skills, and experience in one place.  
+# Vishakh Cheruparambath | My One Web Space
+> Welcome to my personal space on the web! I'm a masters student passionate about intelligent systems and real-world innovation. Explore my projects, skills, and experience in one place.  
 >  
-> Want to make one? – This website is built on a simple, clean, and responsive template tailored for Automotive, Robotics & AI Engineers. Showcasing my projects, experience, and skills through elegant design and interactive features that grabs anyone’s attention.
+> Want to make one? – This website is built on a simple, clean, and responsive template tailored for ML, Robotics & AI Engineers. Showcasing my projects, experience, and skills through elegant design and interactive features that grabs anyone’s attention.
 
 > https://cvishakh.github.io/
 
@@ -18,13 +18,13 @@
   </kbd>
 </p>
 
-## Functions 📋
+## Functions
 ⚡️ A simple, fully responsive starter website\
 ⚡️ Valid HTML5 & CSS3\
 ⚡️ Easy to customize and integrate\
 ⚡️ Smooth navigation and compact UI
 
-## Sections 📚
+## Sections
 This portfolio includes the following sections:
 
 ✔️ **HomePage**: A brief about myself and contact details.  
@@ -34,7 +34,7 @@ This portfolio includes the following sections:
 ✔️ **Projects**: A list of completed projects.
 
 
-## Steps by Step Procedure 📋
+## Steps to follow
 To try and implement your own portfolio using this simple UI, follow the steps:
 - Clone the repository to your local machine via HTTPS:
 ```
@@ -52,13 +52,13 @@ git clone https://github.com/cvishakh/cvishakh.github.io.git
 - Push the generated code to the `main` branch of current repository.
 
 
-## Tools Used 🛠️
+## Tools Used
 * **[GitHub Pages](https://pages.github.com/)** – To host the static website (HTML, CSS, JS).
 * **[Google Fonts](https://fonts.google.com/)** – For custom web typography.
 * **[Pillow (PIL)](https://python-pillow.org/)** – To extract EXIF GPS data from images in Python.
 * **[JSON](https://www.json.org/json-en.html)** – To store and manage photo metadata.
 
-## License 📄
+## License
 This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE) file for details.
 
 ⭐ Star this project if you find it helpful! 
