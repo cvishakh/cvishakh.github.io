@@ -1,4 +1,4 @@
-# Vishakh Cheruparambath | My One Web Space
+# Vishakh Cheruparambath | MyOneSpace
 > Welcome to my personal space on the web! I'm a masters student passionate about intelligent systems and real-world innovation. Explore my projects, skills, and experience in one place.  
 >  
 > Want to make one? – This website is built on a simple, clean, and responsive template tailored for ML, Robotics & AI Engineers. Showcasing my projects, experience, and skills through elegant design and interactive features that grabs anyone’s attention.
@@ -19,29 +19,29 @@
 </p>
 
 ## Functions
-⚡️ A simple, fully responsive starter website\
-⚡️ Valid HTML5 & CSS3\
-⚡️ Easy to customize and integrate\
-⚡️ Smooth navigation and compact UI
+- A simple, fully responsive starter website\
+- Valid HTML5 & CSS3\
+- Easy to customize and integrate\
+- Smooth navigation and compact UI
 
 ## Sections
 This portfolio includes the following sections:
 
-✔️ **HomePage**: A brief about myself and contact details.  
-✔️ **Profile**: A brief career timeline and background.  
-✔️ **Gallery**: Snapshots from my journey through my lens.  
-✔️ **Blog**: A list of blog articles published via [Medium](https://medium.com/@cvishakh).  
-✔️ **Projects**: A list of completed projects.
+- **HomePage**: A brief about myself and contact details.  
+- **Profile**: A brief career timeline and background.  
+- **Gallery**: Snapshots from my journey through my lens.  
+- **Blog**: A list of blog articles published via [Medium](https://medium.com/@cvishakh).  
+- **Projects**: A list of completed projects.
 
 
 ## Steps to follow
-To try and implement your own portfolio using this simple UI, follow the steps:
+To try and implement your own portfolio using this simple UI, follow these steps:
 - Clone the repository to your local machine via HTTPS:
 ```
 git clone https://github.com/cvishakh/cvishakh.github.io.git
 ```
 
-- Modify the content in the <b>index.html</b> file to your corresponding career timeline, photos, blogs, and projects.
+- Modify the content in the <b>index.html</b> file to fits your career timeline, photos, blogs, and projects.
 - To update your academic and carer journey, modify/edit `.\timeline.html`. 
 - Add or remove images from `.\photos` directory as per your requirement.
 - extract_metadata.py: Extracts GPS metadata (latitude & longitude) from JPEG images and generates a `photos_metadata.json` file for use in the photo gallery.
