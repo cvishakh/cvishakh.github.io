@@ -8,7 +8,7 @@
   <style>
     :root {
       --highlight: #4da6ff;
-      --bg-dark: #0b0c1c;
+      --bg-dark: #0B1215;
       --text-light: #e8e8e8;
       --text-muted: #aaa;
     }
@@ -38,7 +38,7 @@
       width: 100vw;
       height: 100vh;
       background: url('./images/bg_main.png') no-repeat center/cover;
-      background-color: #000;
+      background-color: #0B1215;
       z-index: -3;
       pointer-events: none;
     }
@@ -50,7 +50,6 @@
       margin-bottom: 3rem;
     }
 
-    /* Navbar */
     .navbar {
       position: absolute;
       top: 1.5rem;
@@ -129,9 +128,36 @@
       color: var(--text-muted);
     }
 
+    .meta {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+      font-style: normal;
+    }
+
+    .sub-role {
+      margin-top: 0.8rem;
+      margin-bottom: 0.8rem;
+      padding-left: 1rem;
+      border-left: 2px solid #2a2d3e;
+    }
+
+    .sub-role-title {
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: #ddd;
+      margin-bottom: 0.2rem;
+    }
+
+    .sub-role-meta {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
     ul {
       padding-left: 1.2rem;
       list-style-type: disc;
+      margin-top: 0.4rem;
     }
 
     li {
@@ -181,6 +207,10 @@
         padding: 0.4rem 0.8rem;
         font-size: 0.9rem;
       }
+
+      .sub-role {
+        padding-left: 0.8rem;
+      }
     }
   </style>
 </head>
@@ -202,8 +232,14 @@
           EOS GmbH Electro Optical Systems
         </a>
       </div>
+      <div class="meta">Full-time • Mar 2026 – Present</div>
+
+      <div class="sub-role">
+        <div class="sub-role-title">Working Student – Process Automation and Data Analysis</div>
+        <div class="sub-role-meta">Part-time • Sep 2025 – Mar 2026</div>
+      </div>
+
       <ul>
-        <li>Branch: Process Automation and Data Analysis (09.2025 – Present)</li>
         <li>Tools: Power Automate, Copilot Studio</li>
       </ul>
     </div>
@@ -272,7 +308,7 @@
     </div>
 
     <div class="event">
-      <div class="date">2016 – 2016</div>
+      <div class="date">2016</div>
       <div class="title">Internship</div>
       <div class="subtitle">
         <a href="https://fact.co.in/" target="_blank" rel="noopener noreferrer" style="color: var(--highlight); text-decoration: none;">
