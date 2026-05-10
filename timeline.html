@@ -21,13 +21,14 @@
 
     body {
       margin: 0;
-      padding: 2rem;
+      padding: 3rem 2rem;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: var(--text-light);
       background-color: var(--bg-dark);
       overflow-x: hidden;
       position: relative;
       min-height: 100vh;
+      line-height: 1.6;
     }
 
     body::before {
@@ -45,9 +46,11 @@
 
     h1 {
       text-align: center;
-      color: #bca9ff;
-      font-size: 2.2rem;
-      margin-bottom: 3rem;
+      color: #f0f0f0;
+      font-size: 2.4rem;
+      margin-bottom: 4rem;
+      font-weight: 700;
+      letter-spacing: 1px;
     }
 
     .navbar {
@@ -75,106 +78,182 @@
 
     .timeline {
       position: relative;
-      max-width: 800px;
+      max-width: 850px;
       margin: 0 auto;
       padding-left: 2rem;
-      border-left: 2px solid #4d4d4d;
+      border-left: 3px solid #4d4d4d;
     }
 
     .event {
       position: relative;
-      padding-left: 1.5rem;
-      margin-bottom: 3rem;
-      transition: opacity 0.4s ease, transform 0.4s ease;
+      padding: 1.5rem;
+      margin-bottom: 2.5rem;
+      transition: all 0.3s ease;
+      background: rgba(80, 85, 95, 0.2);
+      border-radius: 12px;
+      padding-left: 2rem;
+      border: 1px solid rgba(150, 150, 150, 0.2);
+    }
+
+    .event:hover {
+      background: rgba(80, 85, 95, 0.35);
+      border-color: rgba(150, 150, 150, 0.4);
+      transform: translateX(8px);
     }
 
     .event::before {
       content: "";
       position: absolute;
-      left: -1.3rem;
-      top: 0.6rem;
-      width: 0.9rem;
-      height: 0.9rem;
-      background-color: #2a2d3e;
+      left: -1.55rem;
+      top: 1.8rem;
+      width: 1rem;
+      height: 1rem;
+      background-color: #4d4d4d;
       border-radius: 50%;
-      border: 2px solid var(--bg-dark);
-      transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      border: 3px solid var(--bg-dark);
+      transition: all 0.3s ease;
     }
 
     .event:hover::before {
       background-color: var(--highlight);
-      transform: scale(1.3);
-      box-shadow: 0 0 8px var(--highlight), 0 0 16px #4da6ff33;
+      transform: scale(1.4);
+      box-shadow: 0 0 12px var(--highlight), 0 0 24px rgba(77, 166, 255, 0.3);
     }
 
     .date {
-      font-size: 0.95rem;
+      font-size: 1rem;
       font-weight: bold;
       color: var(--highlight);
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.3px;
     }
 
     .title {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       font-weight: 700;
       color: #ffffff;
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
     }
 
     .subtitle {
-      font-size: 1rem;
+      font-size: 1.05rem;
       font-style: italic;
-      margin-bottom: 0.5rem;
-      color: var(--text-muted);
+      margin-bottom: 0.7rem;
+      color: #b0d4ff;
+      line-height: 1.5;
     }
 
     .meta {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      margin-bottom: 0.6rem;
+      font-size: 0.95rem;
+      color: #bbb;
+      margin-bottom: 0.8rem;
       font-style: normal;
+      line-height: 1.5;
     }
 
     .sub-role {
-      margin-top: 0.8rem;
-      margin-bottom: 0.8rem;
-      padding-left: 1rem;
-      border-left: 2px solid #2a2d3e;
+      margin-top: 1.2rem;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      padding-left: 1.2rem;
+      border-left: 3px solid var(--highlight);
+      background: rgba(77, 166, 255, 0.08);
+      border-radius: 8px;
+    }
+
+    /* Branch structure for multiple roles */
+    .branches-container {
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+    }
+
+    .branch {
+      position: relative;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      background: rgba(80, 85, 95, 0.15);
+      border: 1px solid rgba(150, 150, 150, 0.3);
+      border-radius: 8px;
+      border-left: 3px solid var(--highlight);
+    }
+
+    .branch::before {
+      content: "";
+      position: absolute;
+      left: -1.85rem;
+      top: 1.5rem;
+      width: 0.4rem;
+      height: 0.4rem;
+      background: var(--highlight);
+      border-radius: 50%;
+    }
+
+    .branch-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 0.4rem;
+      line-height: 1.5;
+    }
+
+    .branch-meta {
+      font-size: 0.9rem;
+      color: #bbb;
+      line-height: 1.5;
     }
 
     .sub-role-title {
-      font-size: 0.98rem;
+      font-size: 1rem;
       font-weight: 600;
-      color: #ddd;
-      margin-bottom: 0.2rem;
+      color: #ffffff;
+      margin-bottom: 0.4rem;
+      line-height: 1.5;
     }
 
     .sub-role-meta {
-      font-size: 0.85rem;
-      color: var(--text-muted);
+      font-size: 0.9rem;
+      color: #bbb;
+      line-height: 1.5;
     }
 
     ul {
-      padding-left: 1.2rem;
+      padding-left: 1.5rem;
       list-style-type: disc;
-      margin-top: 0.4rem;
+      margin-top: 0.8rem;
     }
 
     li {
-      font-size: 0.95rem;
-      margin-bottom: 0.4rem;
-      line-height: 1.5;
-      color: #ddd;
+      font-size: 0.98rem;
+      margin-bottom: 0.6rem;
+      line-height: 1.7;
+      color: #e0e0e0;
     }
 
     .attachment {
-      margin-top: 0.8rem;
-      font-size: 0.9rem;
+      margin-top: 1rem;
+      font-size: 0.95rem;
     }
 
     .attachment a {
       color: var(--highlight);
       text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: rgba(77, 166, 255, 0.1);
+      border-radius: 6px;
+      border: 1px solid rgba(77, 166, 255, 0.3);
+    }
+
+    .attachment a:hover {
+      background: rgba(77, 166, 255, 0.2);
+      border-color: rgba(77, 166, 255, 0.6);
+      transform: translateX(4px);
     }
 
     @media (max-width: 600px) {
@@ -217,30 +296,34 @@
 <body>
   <div class="navbar">
     <a href="./index.html">Home</a>
-    <a href="./assets/Vishakh_Cheruparambath_Lebenslauf.pdf" download>
-      Resume <span style="margin-left: 4px;">&#x2B07;</span>
-    </a>
+    <a href="mailto:vishakh.cheruparambath@outlook.com">Contact Me</a>
   </div>
 
   <h1>Profile</h1>
   <section class="timeline">
     <div class="event">
       <div class="date">09.2025 – Present</div>
-      <div class="title">Masterand</div>
+      <div class="title">EOS GmbH Electro Optical Systems</div>
       <div class="subtitle">
         <a href="https://www.eos.info/" target="_blank" rel="noopener noreferrer" style="color: var(--highlight); text-decoration: none;">
-          EOS GmbH Electro Optical Systems
+          EOS GmbH
         </a>
       </div>
-      <div class="meta">Full-time • Mar 2026 – Present</div>
 
-      <div class="sub-role">
-        <div class="sub-role-title">Working Student – Process Automation and Data Analysis</div>
-        <div class="sub-role-meta">Part-time • Sep 2025 – Mar 2026</div>
+      <div class="branches-container">
+        <div class="branch">
+          <div class="branch-title">Master Thesis - Vision-Transformer Based Classification of Spare Parts</div>
+          <div class="branch-meta">Full-time • Mar 2026 – Present</div>
+        </div>
+
+        <div class="branch">
+          <div class="branch-title">Working Student – Automation and Data Engineering</div>
+          <div class="branch-meta">Part-time • Sep 2025 – Mar 2026</div>
+        </div>
       </div>
 
       <ul>
-        <li>Tools: Power Platform, Copilot Studio, Databricks, Blue Prism </li>
+        <li>Tools: Power Platform, Copilot Studio, Azure Databricks, Blue Prism</li>
       </ul>
     </div>
 
@@ -253,7 +336,7 @@
         </a>
       </div>
       <ul>
-        <li>Tools: VBA, SiemensGPT, UiPath, Power Apps, Power BI, Azure AI Foundry tools</li>
+        <li>Tools: VBA, SiemensGPT, UiPath, Power Apps, Power BI, Azure AI Foundry</li>
       </ul>
       <div class="attachment">
         <a href="./assets/Arbeit_Zeugnis_SIEMENS.pdf" target="_blank">📎 View Attachment</a>

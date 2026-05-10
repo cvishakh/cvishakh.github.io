@@ -86,34 +86,73 @@
     .content-wrapper {
       min-height: 100vh;
       display: flex; flex-direction: column; align-items: center;
-      padding: 5vh 1rem 8vh; gap: 2.5rem;
+      padding: 5vh 2rem 8vh; gap: 3rem;
       background: rgba(0,0,0,0.1);
     }
     header { text-align: center }
     header h1 {
       font-size: clamp(2.4rem, 5vw + .5rem, 3.5rem);
-      font-weight: 700; letter-spacing: .5px;
+      font-weight: 700; letter-spacing: 1px;
+      margin-bottom: 1.5rem;
     }
-    header p { margin-top: .25rem; opacity: .8; font-size: .95rem }
+    header p { margin-top: .5rem; opacity: .8; font-size: .95rem; line-height: 1.6; }
 
     .cards {
-      display: flex; flex-wrap: wrap; gap: 1.5rem;
-      justify-content: center; width: 100%; max-width: 980px;
-      margin-bottom: 10rem;
+      display: flex; flex-wrap: wrap; gap: 2rem;
+      justify-content: center; width: 100%; max-width: 1000px;
+      margin: 2rem 0 5rem;
+      padding: 0 1rem;
     }
     .card {
       flex: 1 1 200px; max-width: 220px;
-      background: rgba(12,18,40,.5); border-radius: 2rem;
-      backdrop-filter: blur(6px);
-      box-shadow: 0 0 0 2px rgba(255,255,255,.07), 0 12px 32px -10px #000 inset;
+      background: rgba(80, 85, 95, 0.5); border-radius: 2rem;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,.1);
       text-decoration: none; overflow: hidden;
-      transition: transform .35s ease, box-shadow .35s ease;
+      transition: transform .3s ease, box-shadow .3s ease, background .3s ease;
       display: flex; flex-direction: column; align-items: center;
       color: #fff; /* inherit white text */
     }
     .card:hover {
-      transform: translateY(-6px) scale(1.02);
-      box-shadow: 0 0 0 2px rgba(255,255,255,.15), 0 22px 40px -10px #000 inset;
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,.2);
+      background: rgba(100, 110, 120, 0.8);
+    }
+    /* Card Color Variants */
+    .card:nth-child(1) {
+      background: rgba(80, 85, 95, 0.5);
+      border: 1px solid rgba(150, 150, 150, 0.3);
+    }
+    .card:nth-child(1):hover {
+      background: rgba(100, 110, 120, 0.8);
+      box-shadow: 0 16px 48px rgba(100, 110, 120, 0.3), 0 0 0 1px rgba(150, 150, 150, 0.5);
+    }
+    
+    .card:nth-child(2) {
+      background: rgba(80, 85, 95, 0.5);
+      border: 1px solid rgba(150, 150, 150, 0.3);
+    }
+    .card:nth-child(2):hover {
+      background: rgba(100, 110, 120, 0.8);
+      box-shadow: 0 16px 48px rgba(100, 110, 120, 0.3), 0 0 0 1px rgba(150, 150, 150, 0.5);
+    }
+    
+    .card:nth-child(3) {
+      background: rgba(80, 85, 95, 0.5);
+      border: 1px solid rgba(150, 150, 150, 0.3);
+    }
+    .card:nth-child(3):hover {
+      background: rgba(100, 110, 120, 0.8);
+      box-shadow: 0 16px 48px rgba(100, 110, 120, 0.3), 0 0 0 1px rgba(150, 150, 150, 0.5);
+    }
+    
+    .card:nth-child(4) {
+      background: rgba(80, 85, 95, 0.5);
+      border: 1px solid rgba(150, 150, 150, 0.3);
+    }
+    .card:nth-child(4):hover {
+      background: rgba(100, 110, 120, 0.8);
+      box-shadow: 0 16px 48px rgba(100, 110, 120, 0.3), 0 0 0 1px rgba(150, 150, 150, 0.5);
     }
     .card__visual {
       width: 100%; aspect-ratio: 1/1; padding: 1.5rem;
@@ -125,8 +164,8 @@
       loading: lazy; decoding: async;
     }
     .card__label {
-      padding: 1rem; font-size: 1.1rem; font-weight: 600; text-align: center;
-      color: #fff;
+      padding: 1.5rem 1rem; font-size: 1.15rem; font-weight: 600; text-align: center;
+      color: #fff; letter-spacing: 0.5px;
     }
 
     .affiliations {
@@ -151,14 +190,16 @@
     }
 
     .affiliations__logos img:hover {
-      transform: scale(1.05); /* optional: subtle zoom on hover */
+      transform: scale(1.08); /* optional: subtle zoom on hover */
+      filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255,255,255,0.3));
     }
 
     .affiliations h2 {
     font-size: 1.8rem;   /* increase heading size */
     font-weight: 700;    /* make it bold */
-    margin-bottom: 1rem; /* add space below */
-    color: #fff;         /* ensure it’s bright */
+    margin-bottom: 2rem; /* add space below */
+    color: #fff;         /* ensure it's bright */
+    letter-spacing: 0.5px;
     }
 
     @media (max-width:420px) { .card { flex: 1 1 90% } }
@@ -197,26 +238,46 @@
     }
 
     .hero__desc {
-      max-width: 600px;
-      margin: 0 auto;
+      max-width: 650px;
+      margin: 1rem auto;
       font-size: 1rem;
       opacity: 0.85;
+      line-height: 1.7;
+      letter-spacing: 0.3px;
+      text-align: center;
     }
 
     .hero__location {
       font-size: 0.95rem;
       color: #ccc;
+      margin-top: 1rem;
+      letter-spacing: 0.3px;
+    }
+
+    .hero__social {
+      margin-top: 1.5rem;
+      display: flex;
+      gap: 1.2rem;
+      justify-content: center;
     }
 
     .hero__social a {
-      margin: 0 0.5rem;
       color: #bbb;
-      font-size: 1.3rem;
-      transition: color 0.3s;
+      font-size: 1.4rem;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.05);
     }
 
     .hero__social a:hover {
       color: #fff;
+      background: rgba(255,255,255,0.15);
+      transform: translateY(-3px);
     }
   </style>
 </head>
@@ -227,7 +288,13 @@
     <img src="./images/profileimage.jpg" alt="Vishakh Cheruparambath" class="hero__avatar"/>
     <h1><span class="gradient">Vishakh Cheruparambath</span></h1>
     <p class="hero__desc">
-      Masters student in Electromobility at FAU, Germany – trying to turn ideas into intelligent systems. Passionate about sustainable technologies and innovative data-driven solutions.
+      Hey there! I'm Vishakh, a Master's student in Electromobility (ACES) at Friedrich-Alexander-Universität Erlangen-Nürnberg, Germany with a solid foundation in Mechanical Engineering from APJ Abdul Kalam Technological University, India. I work at the exciting intersection of AI, data engineering, and process automation - and honestly, there's no place I'd rather be.
+    </p>
+    <p class="hero__desc">
+      My professional journey has taken me from the helicopter shop floors of Hindustan Aeronautics Limited in Bangalore, India to the management sectors of Siemens Mobility and EOS GmbH, where I've built AI agents, automated workflows, and turned messy data into meaningful insights. I love turning complex problems into clean, scalable solutions which can bring real value and ROI to businesses and stakeholders.
+    </p>
+    <p class="hero__desc">
+      I'm particularly passionate about sustainable technologies and the role AI can play in transforming how businesses operate - not just making things faster, but making them smarter. I enjoy exploring the full stack of modern automation and data tools. When I'm free you'll find me engaged about space, traveling, or planning my next adventure somewhere new. I'm a firm believer that curiosity is the key that brings the mindset to do everything what I love to do.
     </p>
     <p class="hero__location"><i class="fas fa-map-marker-alt"></i> Fürth, Germany</p>
     <div class="hero__social">
@@ -276,7 +343,7 @@
 
   <!-- Footer -->
   <footer style="background-color: #11141f; padding: 1rem 0; text-align: center; color: #bbb; font-size: 0.9rem;">
-    © 2025 Vishakh Cheruparambath. All rights reserved.
+    © 2026 Vishakh Cheruparambath. All rights reserved.
   </footer>
 </body>
 </html>
