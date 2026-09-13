@@ -1,210 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Blog – Vishakh Cheruparambath</title>
-  <meta name="description" content="Read blog posts by Vishakh Cheruparambath on nature, hiking and wandering." />
-  <link rel="canonical" href="https://cvishakh.github.io/blogs.html" />
+
+  <meta name="description" content="Read blog posts by Vishakh Cheruparambath on nature, hiking and wandering."/>
+  <link rel="canonical" href="https://cvishakh.github.io/blogs.html"/>
   <link rel="icon" href="./images/favicon.png" type="image/png" />
-  <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      margin: 0;
-      padding: 2rem;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #e8e8e8;
-      position: relative;
-      min-height: 100vh;
-      background-color: #000;
-    }
-
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: url('./images/bg_main.png') no-repeat center/cover;
-      background-color: #000;
-      z-index: -3;
-      pointer-events: none;
-    }
-
-    .home-button {
-      position: absolute;
-      top: 1.5rem;
-      right: 2rem;
-      background-color: #1a5fb4;
-      color: #fff;
-      padding: 0.5rem 1rem;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-
-    .home-button:hover {
-      background-color: #4190e1;
-      transform: translateY(-2px);
-    }
-
-    h1 {
-      text-align: center;
-      color: #f0f0f0;
-      margin-bottom: 2rem;
-    }
-
-    p.intro {
-      text-align: center;
-      color: #ccc;
-      margin-bottom: 3rem;
-      font-size: 1rem;
-    }
-
-    .blog-container {
-      max-width: 900px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-
-    .blog-card {
-      display: flex;
-      gap: 1.5rem;
-      background: rgba(255, 255, 255, 0.05);
-      padding: 1.5rem;
-      border-radius: 1rem;
-      transition: background 0.3s ease, transform 0.2s ease;
-      align-items: flex-start;
-    }
-
-    .blog-card:hover {
-      background: rgba(255, 255, 255, 0.1);
-      transform: translateY(-4px);
-    }
-
-    .blog-thumbnail {
-      width: 140px;
-      height: auto;
-      border-radius: 0.5rem;
-      flex-shrink: 0;
-      object-fit: cover;
-    }
-
-    .blog-content {
-      flex: 1;
-    }
-
-    .blog-card h2 {
-      color: #4da6ff;
-      margin-bottom: 0.3rem;
-      font-size: 1.25rem;
-    }
-
-    .pub-date {
-      font-size: 0.8rem;
-      color: #aaa;
-      margin-bottom: 0.5rem;
-    }
-
-    .blog-card p {
-      margin: 0 0 1rem;
-      color: #ccc;
-      font-size: 0.95rem;
-    }
-
-    .blog-card a {
-      color: #4da6ff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .blog-card a:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 700px) {
-      .blog-card {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-      .blog-thumbnail {
-        width: 100%;
-        max-width: 300px;
-      }
-      .blog-content {
-        width: 100%;
-      }
-    }
-  </style>
-</head>
-<body>
-  <a href="index.html" class="home-button">Home</a>
-
-  <h1>Blog</h1>
-  <p class="intro">Insights into nature, hiking, and wandering – written by Vishakh Cheruparambath</p>
-
-  <div class="blog-container"></div>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/site.css" />
 
   <script>
-    async function fetchMediumBlogs() {
-      const username = "cvishakh"; // Replace with medium username
-      const url = `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@${username}`;
+    /* applied before paint to avoid a flash of the wrong theme */
+    (function () {
+      var stored = null;
+      try { stored = localStorage.getItem('theme'); } catch (e) {}
+      document.documentElement.setAttribute('data-theme', stored || 'dark');
+    })();
+  </script>
+</head>
 
-      try {
-        const res = await fetch(url);
-        const data = await res.json();
-        const container = document.querySelector(".blog-container");
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a class="nav-link" href="index.html">about</a>
+      <a class="nav-link" href="timeline.html">profile</a>
+      <a class="nav-link" href="projects.html">projects</a>
+      <a class="nav-link is-active" href="blogs.html">blog</a>
+      <a class="nav-link" href="photos.html">gallery</a>
+      <button class="icon-btn" id="searchBtn" aria-label="Search (Ctrl+K)">
+        <span class="kbd">ctrl k</span><i class="fas fa-magnifying-glass"></i>
+      </button>
+      <button class="icon-btn" id="themeBtn" aria-label="Toggle dark mode">
+        <i class="fas fa-moon" id="themeIcon"></i>
+      </button>
+    </div>
+  </nav>
 
-        const posts = data.items.filter(item => item.categories.length > 0); // Only articles
+  <main class="page">
+    <h1 class="page-title">blog</h1>
+    <p class="page-subtitle">
+      Insights into nature, hiking and wandering. Posts are pulled live from my
+      <a href="https://medium.com/@cvishakh" target="_blank" rel="noopener noreferrer">Medium</a> feed.
+    </p>
 
-        posts.forEach(post => {
-          const card = document.createElement("div");
-          card.className = "blog-card";
+    <div class="blog-list" id="blogList">
+      <p class="state-msg">Loading posts…</p>
+    </div>
+  </main>
 
-          const img = document.createElement("img");
-          img.className = "blog-thumbnail";
-          const imgMatch = post.content.match(/<img[^>]+src="([^">]+)"/);
-          img.src = imgMatch ? imgMatch[1] : "images/default-thumb.png";
-          img.alt = post.title;
+  <footer>© 2026 Vishakh Cheruparambath. All rights reserved. Adapted from Jekyll with al-folio theme. Hosted by GitHub Pages.</footer>
 
+  <script src="./assets/js/site.js"></script>
+  <script>
+    (function () {
+      var USERNAME = 'cvishakh';
+      var FEED = 'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@' + USERNAME;
+      var list = document.getElementById('blogList');
 
-          const content = document.createElement("div");
-          content.className = "blog-content";
-
-          const title = document.createElement("h2");
-          title.textContent = post.title;
-
-          const date = document.createElement("p");
-          date.className = "pub-date";
-          date.textContent = `Published on ${new Date(post.pubDate).toLocaleDateString()}`;
-
-          const desc = document.createElement("p");
-          desc.innerHTML = post.description.slice(0, 200) + "...";
-
-          const link = document.createElement("a");
-          link.href = post.link;
-          link.target = "_blank";
-          link.textContent = "Read on Medium →";
-
-          content.append(title, date, desc, link);
-          card.append(img, content);
-          container.appendChild(card);
-        });
-      } catch (err) {
-        console.error("Failed to load Medium blog posts", err);
+      function setMessage(text) {
+        list.innerHTML = '';
+        var p = document.createElement('p');
+        p.className = 'state-msg';
+        p.textContent = text;
+        list.appendChild(p);
       }
-    }
 
-    fetchMediumBlogs();
+      function stripHtml(html) {
+        var tmp = document.createElement('div');
+        tmp.innerHTML = html;
+        return (tmp.textContent || '').replace(/\s+/g, ' ').trim();
+      }
+
+      function render(posts) {
+        list.innerHTML = '';
+
+        posts.forEach(function (post) {
+          var item = document.createElement('article');
+          item.className = 'blog-item';
+
+          var imgMatch = post.content && post.content.match(/<img[^>]+src="([^">]+)"/);
+          if (imgMatch) {
+            var img = document.createElement('img');
+            img.src = imgMatch[1];
+            img.alt = post.title;
+            img.loading = 'lazy';
+            item.appendChild(img);
+          } else {
+            item.style.gridTemplateColumns = '1fr';
+          }
+
+          var body = document.createElement('div');
+
+          var h3 = document.createElement('h3');
+          h3.textContent = post.title;
+
+          var date = document.createElement('div');
+          date.className = 'pub-date';
+          date.textContent = new Date(post.pubDate).toLocaleDateString(undefined, {
+            year: 'numeric', month: 'short', day: '2-digit'
+          });
+
+          var desc = document.createElement('p');
+          var text = stripHtml(post.description || '');
+          desc.textContent = text.length > 220 ? text.slice(0, 220) + '…' : text;
+
+          var link = document.createElement('a');
+          link.className = 'read-more';
+          link.href = post.link;
+          link.target = '_blank';
+          link.rel = 'noopener noreferrer';
+          link.textContent = 'Read on Medium →';
+
+          body.append(h3, date, desc, link);
+          item.appendChild(body);
+          list.appendChild(item);
+        });
+      }
+
+      fetch(FEED)
+        .then(function (res) { return res.json(); })
+        .then(function (data) {
+          var posts = (data.items || []).filter(function (i) {
+            return i.categories && i.categories.length > 0;
+          });
+          if (!posts.length) {
+            setMessage('No posts published yet — check back soon.');
+            return;
+          }
+          render(posts);
+        })
+        .catch(function (err) {
+          console.error('Failed to load Medium blog posts', err);
+          setMessage('Could not load posts right now. Read them directly on Medium.');
+        });
+    })();
   </script>
 </body>
 </html>

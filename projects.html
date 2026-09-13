@@ -1,245 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Projects – Vishakh Cheruparambath</title>
+  <title>Projects - Vishakh Cheruparambath</title>
+
+  <meta name="description" content="Research and side projects by Vishakh Cheruparambath in AI, robotics and process automation."/>
+  <link rel="canonical" href="https://cvishakh.github.io/projects.html"/>
   <link rel="icon" href="./images/favicon.png" type="image/png" />
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #0b0c1c url('./images/bg_main.png') no-repeat center/cover;
-      color: #e8e8e8;
-      padding: 2rem;
-      min-height: 100vh;
-    }
-
-    .home-button {
-      position: absolute;
-      top: 1.5rem;
-      right: 2rem;
-      background-color: #1a5fb4;
-      color: #fff;
-      padding: 0.5rem 1rem;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
-
-    .home-button:hover {
-      background-color: #4190e1;
-      transform: translateY(-2px);
-    }
-
-    h1 {
-      text-align: center;
-      color: #f0f0f0;
-      margin-bottom: 3rem;
-    }
-
-    .projects-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .card {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 1rem;
-      padding: 1.5rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      position: relative;
-      cursor: pointer;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 0 20px rgba(150, 150, 255, 0.2);
-    }
-
-    .card h2 {
-      font-size: 1.2rem;
-      color: #fff;
-      margin-bottom: 0.5rem;
-    }
-
-    .card p {
-      font-size: 0.95rem;
-      color: #ccc;
-    }
-
-    .tags {
-      margin-top: 1rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-    }
-
-    .tag {
-      background: #132647;
-      color: #4da6ff;
-      padding: 0.25rem 0.6rem;
-      border-radius: 0.5rem;
-      font-size: 0.75rem;
-    }
-
-    /* ────────── Modal ────────── */
-    .modal {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.85);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-    }
-
-    .modal-content {
-      background: #0f111f;
-      padding: 2rem;
-      border-radius: 1rem;
-      max-width: 600px;
-      width: 90%;
-      color: #fff;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
-      position: relative;
-    }
-
-    .modal-content h2 {
-      color: #bca9ff;
-      margin-bottom: 1rem;
-    }
-
-    .modal-content ul {
-      margin-top: 1rem;
-      padding-left: 1.2rem;
-    }
-
-    .modal-content ul li {
-      margin-bottom: 0.5rem;
-      font-size: 0.95rem;
-    }
-
-    .modal .close {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      font-size: 1.5rem;
-      color: #fff;
-      cursor: pointer;
-    }
-
-    .modal .tags {
-      margin-top: 1rem;
-    }
-
-    .github-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: #ccc;
-      text-decoration: none;
-      font-size: 0.9rem;
-      margin-top: 1.5rem;
-      transition: color 0.3s;
-    }
-
-    .github-link:hover {
-      color: #4da6ff;
-    }
-
-    .github-link svg {
-      fill: currentColor;
-    }
-  </style>
-</head>
-<body>
-  <a href="./index.html" class="home-button">Home</a>
-  <h1>Projects Overview</h1>
-
-  <div class="projects-container">
-    <div class="card" onclick="openModal(0)">
-      <h2>Vision based interaction for AMR</h2>
-      <p>Gesture recognition for enhanced human-robot collaboration in intralogistics application and seamless ROS2 integration.</p>
-      <div class="tags">
-        <span class="tag">Python</span>
-        <span class="tag">ROS2</span>
-        <span class="tag">Gesture Recognition</span>
-        <span class="tag">CNN LSTM Model</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal -->
-  <div class="modal" id="projectModal">
-    <div class="modal-content" id="modalContent">
-      <span class="close" onclick="closeModal()">×</span>
-      <h2>Vision based interaction for AMR</h2>
-      <p>Gesture recognition for enhanced human-robot collaboration in intralogistics application and seamless ROS2 integration.</p>
-
-      <!-- GitHub Link with Icon -->
-      <a href="https://github.com/cvishakh/gesture_classification_zed2i"
-         class="github-link"
-         target="_blank"
-         rel="noopener noreferrer">
-        <svg width="20" height="20" viewBox="0 0 16 16" aria-hidden="true">
-          <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 
-          2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
-          0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52
-          -.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 
-          2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64
-          -3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08
-          -2.12 0 0 .67-.21 2.2.82a7.65 7.65 0 0 1 2-.27c.68 0 
-          1.36.09 2 .27 1.53-1.04 2.2-.82 
-          2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 
-          1.27.82 2.15 0 3.07-1.87 3.75-3.65 
-          3.95.29.25.54.73.54 1.48 0 1.07-.01 
-          1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 
-          0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
-        </svg>
-        View Source
-      </a>
-
-      <h3 style="margin-top: 1.5rem;">Features:</h3>
-      <ul>
-        <li>Engineered a production-grade custom gesture recognition system</li>
-        <li>Modular ROS2-based system architecture for gesture commands</li>
-        <li>Implemented algorithms for multi-object detection using ZED 2i</li>
-        <li>Built continuous integration pipeline and software stack in FAPS GitLab</li>
-        <li>Designed and documented system architecture in Obsidian</li>
-        <li>Developed a Behavior Tree for modular and reusable gesture commands</li>
-      </ul>
-
-      <h3 style="margin-top: 1.5rem;">Tech Stack:</h3>
-      <div class="tags">
-        <span class="tag">C++</span>
-        <span class="tag">ROS2</span>
-        <span class="tag">ZED2i</span>
-        <span class="tag">Python</span>
-        <span class="tag">Behavior Tree</span>
-        <span class="tag">GitLab</span>
-        <span class="tag">Obsidian</span>
-      </div>
-    </div>
-  </div>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/site.css" />
 
   <script>
-    function openModal(index) {
-      document.getElementById('projectModal').style.display = 'flex';
-    }
+    /* applied before paint to avoid a flash of the wrong theme */
+    (function () {
+      var stored = null;
+      try { stored = localStorage.getItem('theme'); } catch (e) {}
+      document.documentElement.setAttribute('data-theme', stored || 'dark');
+    })();
+  </script>
+</head>
 
-    function closeModal() {
-      document.getElementById('projectModal').style.display = 'none';
-    }
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a class="nav-link" href="index.html">about</a>
+      <a class="nav-link" href="timeline.html">profile</a>
+      <a class="nav-link is-active" href="projects.html">projects</a>
+      <a class="nav-link" href="blogs.html">blog</a>
+      <a class="nav-link" href="photos.html">gallery</a>
+      <button class="icon-btn" id="searchBtn" aria-label="Search (Ctrl+K)">
+        <span class="kbd">ctrl k</span><i class="fas fa-magnifying-glass"></i>
+      </button>
+      <button class="icon-btn" id="themeBtn" aria-label="Toggle dark mode">
+        <i class="fas fa-moon" id="themeIcon"></i>
+      </button>
+    </div>
+  </nav>
 
-    window.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeModal();
-    });
+  <main class="page">
+    <h1 class="page-title">projects</h1>
+    <p class="page-subtitle">
+      Selected topics of research and side projects across AI, robotics and process automation. Select a card for details.
+    </p>
+
+    <div class="projects-grid">
+      <button class="project-card" type="button" data-project="amr">
+        <h3>Vision based interaction for AMR</h3>
+        <p>Gesture recognition for enhanced human-robot collaboration in intralogistics, with seamless ROS2 integration.</p>
+        <div class="tl-tags">
+          <span class="tag">Python</span>
+          <span class="tag">ROS2</span>
+          <span class="tag">Gesture Recognition</span>
+          <span class="tag">CNN-LSTM</span>
+        </div>
+      </button>
+    </div>
+  </main>
+
+  <footer>© 2026 Vishakh Cheruparambath. All rights reserved. Adapted from Jekyll with al-folio theme. Hosted by GitHub Pages.</footer>
+
+  <!-- project detail templates -->
+  <template id="project-amr">
+    <h2>Vision based interaction for AMR</h2>
+    <p>Gesture recognition for enhanced human-robot collaboration in intralogistics applications, with seamless ROS2 integration.</p>
+
+    <a class="source-link" href="https://github.com/cvishakh/gesture_classification_zed2i" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-github"></i> View source
+    </a>
+
+    <h3>Features</h3>
+    <ul>
+      <li>Engineered a production-grade custom gesture recognition system.</li>
+      <li>Modular ROS2-based system architecture for gesture commands.</li>
+      <li>Implemented algorithms for multi-object detection using the ZED 2i.</li>
+      <li>Built a continuous integration pipeline and software stack in FAPS GitLab.</li>
+      <li>Designed and documented the system architecture in Obsidian.</li>
+      <li>Developed a behavior tree for modular and reusable gesture commands.</li>
+    </ul>
+
+    <h3>Tech stack</h3>
+    <div class="tl-tags">
+      <span class="tag">C++</span>
+      <span class="tag">ROS2</span>
+      <span class="tag">ZED2i</span>
+      <span class="tag">Python</span>
+      <span class="tag">Behavior Tree</span>
+      <span class="tag">GitLab</span>
+      <span class="tag">Obsidian</span>
+    </div>
+  </template>
+
+  <script src="./assets/js/site.js"></script>
+  <script>
+    (function () {
+      var modal = null;
+      var lastFocused = null;
+
+      function closeModal() {
+        if (!modal) return;
+        modal.remove();
+        modal = null;
+        if (lastFocused) lastFocused.focus();
+      }
+
+      function openModal(key) {
+        var tpl = document.getElementById('project-' + key);
+        if (!tpl || modal) return;
+
+        lastFocused = document.activeElement;
+
+        modal = document.createElement('div');
+        modal.className = 'modal';
+        modal.setAttribute('role', 'dialog');
+        modal.setAttribute('aria-modal', 'true');
+
+        var content = document.createElement('div');
+        content.className = 'modal__content';
+        content.tabIndex = -1;
+
+        var close = document.createElement('button');
+        close.className = 'modal__close';
+        close.type = 'button';
+        close.setAttribute('aria-label', 'Close');
+        close.innerHTML = '&times;';
+        close.addEventListener('click', closeModal);
+
+        content.appendChild(close);
+        content.appendChild(tpl.content.cloneNode(true));
+        modal.appendChild(content);
+        document.body.appendChild(modal);
+        content.focus();
+
+        modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
+      }
+
+      document.querySelectorAll('.project-card').forEach(function (card) {
+        card.addEventListener('click', function () { openModal(card.dataset.project); });
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeModal();
+      });
+    })();
   </script>
 </body>
 </html>

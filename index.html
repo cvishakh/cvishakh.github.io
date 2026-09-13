@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
 <head>
   <meta charset="UTF-8"/>
@@ -8,10 +7,11 @@
   <title>Vishakh Cheruparambath</title>
 
   <link rel="icon" href="./images/favicon.png" type="image/png" />
-
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/site.css" />
 
   <!---- primary SEO meta –-->
   <meta name="description" content="Portfolio of Vishakh Cheruparambath. Browse photos, articles, research interests and career timeline."/>
@@ -43,6 +43,11 @@
     "affiliation": [
       {
         "@type": "Organization",
+        "name": "EOS GmbH Electro Optical Systems",
+        "url": "https://www.eos.info"
+      },
+      {
+        "@type": "Organization",
         "name": "Siemens Mobility GmbH",
         "url": "https://www.mobility.siemens.com/de/de.html"
       },
@@ -58,292 +63,134 @@
       }
     ],
     "sameAs": [
-      "https://www.mobility.siemens.com/de/de.html",
-      "https://www.fau.de/"
+      "https://github.com/cvishakh",
+      "https://www.linkedin.com/in/cvishakh/",
+      "https://x.com/cvishakh_"
     ],
     "description": "Portfolio of Vishakh Cheruparambath"
   }
   </script>
 
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0 }
-    body {
-      margin: 0; padding: 0;
-      /* use Doto as primary font */
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #e8e8e8; overflow-x: hidden; position: relative; min-height: 100vh;
-    }
-    /* Background */
-    body::before {
-      content: ''; position: fixed; top: 0; left: 0;
-      width: 100vw; height: 100vh;
-      background: url('./images/bg_main.png') no-repeat center/cover;
-      background-color: #000;
-      z-index: -3; pointer-events: none;
-    }
-
-    /* Main content */
-    .content-wrapper {
-      min-height: 100vh;
-      display: flex; flex-direction: column; align-items: center;
-      padding: 5vh 2rem 8vh; gap: 3rem;
-      background: rgba(0,0,0,0.1);
-    }
-    header { text-align: center }
-    header h1 {
-      font-size: clamp(2.4rem, 5vw + .5rem, 3.5rem);
-      font-weight: 700; letter-spacing: 1px;
-      margin-bottom: 1.5rem;
-    }
-    header p { margin-top: .5rem; opacity: .8; font-size: .95rem; line-height: 1.6; }
-
-    .cards {
-      display: flex; flex-wrap: wrap; gap: 2rem;
-      justify-content: center; width: 100%; max-width: 1000px;
-      margin: 2rem 0 5rem;
-      padding: 0 1rem;
-    }
-    .card {
-      flex: 1 1 200px; max-width: 220px;
-      background: rgba(80, 85, 95, 0.5); border-radius: 2rem;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 8px 32px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,.1);
-      text-decoration: none; overflow: hidden;
-      transition: transform .3s ease, box-shadow .3s ease, background .3s ease;
-      display: flex; flex-direction: column; align-items: center;
-      color: #fff; /* inherit white text */
-    }
-    .card:hover {
-      transform: translateY(-8px) scale(1.03);
-      box-shadow: 0 16px 48px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,.2);
-      background: rgba(100, 110, 120, 0.8);
-    }
-    /* Card Color Variants */
-    .card:nth-child(1) {
-      background: rgba(80, 85, 95, 0.5);
-      border: 1px solid rgba(150, 150, 150, 0.3);
-    }
-    .card:nth-child(1):hover {
-      background: rgba(100, 110, 120, 0.8);
-      box-shadow: 0 16px 48px rgba(100, 110, 120, 0.3), 0 0 0 1px rgba(150, 150, 150, 0.5);
-    }
-    
-    .card:nth-child(2) {
-      background: rgba(80, 85, 95, 0.5);
-      border: 1px solid rgba(150, 150, 150, 0.3);
-    }
-    .card:nth-child(2):hover {
-      background: rgba(100, 110, 120, 0.8);
-      box-shadow: 0 16px 48px rgba(100, 110, 120, 0.3), 0 0 0 1px rgba(150, 150, 150, 0.5);
-    }
-    
-    .card:nth-child(3) {
-      background: rgba(80, 85, 95, 0.5);
-      border: 1px solid rgba(150, 150, 150, 0.3);
-    }
-    .card:nth-child(3):hover {
-      background: rgba(100, 110, 120, 0.8);
-      box-shadow: 0 16px 48px rgba(100, 110, 120, 0.3), 0 0 0 1px rgba(150, 150, 150, 0.5);
-    }
-    
-    .card:nth-child(4) {
-      background: rgba(80, 85, 95, 0.5);
-      border: 1px solid rgba(150, 150, 150, 0.3);
-    }
-    .card:nth-child(4):hover {
-      background: rgba(100, 110, 120, 0.8);
-      box-shadow: 0 16px 48px rgba(100, 110, 120, 0.3), 0 0 0 1px rgba(150, 150, 150, 0.5);
-    }
-    .card__visual {
-      width: 100%; aspect-ratio: 1/1; padding: 1.5rem;
-      display: flex; justify-content: center; align-items: center;
-    }
-    .card__visual img {
-      width: 100%; height: 100%; object-fit: cover;
-      border-radius: 1.5rem; border: 2px solid rgba(255,255,255,.0);
-      loading: lazy; decoding: async;
-    }
-    .card__label {
-      padding: 1.5rem 1rem; font-size: 1.15rem; font-weight: 600; text-align: center;
-      color: #fff; letter-spacing: 0.5px;
-    }
-
-    .affiliations {
-      padding: 20px 0;
-      text-align: center;
-    }
-
-    .affiliations__logos {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 40px;
-      flex-wrap: wrap; /* allows stacking on smaller screens */
-    }
-
-    .affiliations__logos img {
-      height: 60px;
-      max-width: 160px;
-      object-fit: contain;
-      filter: brightness(0) invert(1); /* makes them white */
-      transition: transform 0.3s ease;
-    }
-
-    .affiliations__logos img:hover {
-      transform: scale(1.08); /* optional: subtle zoom on hover */
-      filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255,255,255,0.3));
-    }
-
-    .affiliations h2 {
-    font-size: 1.8rem;   /* increase heading size */
-    font-weight: 700;    /* make it bold */
-    margin-bottom: 2rem; /* add space below */
-    color: #fff;         /* ensure it's bright */
-    letter-spacing: 0.5px;
-    }
-
-    @media (max-width:420px) { .card { flex: 1 1 90% } }
-
-    .hero {
-      padding: 4rem 1rem 2rem;
-      text-align: center;
-      background: transparent;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .hero__avatar {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      object-fit: cover;
-      background-color: #0b0c1c; /* Dark circle backdrop */
-      padding: 6px; /* Creates the ring thickness */
-      box-shadow: 0 0 10px rgba(255,255,255,0.15);
-      margin-bottom: 1rem;
-    }
-
-    .hero__content h2 {
-      font-size: 1.8rem;
-      font-weight: 700;
-      margin: 0.5rem 0;
-    }
-
-    .hero__content .gradient {
-      background: linear-gradient(to right, #4b6cb7, #182848);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero__desc {
-      max-width: 650px;
-      margin: 1rem auto;
-      font-size: 1rem;
-      opacity: 0.85;
-      line-height: 1.7;
-      letter-spacing: 0.3px;
-      text-align: center;
-    }
-
-    .hero__location {
-      font-size: 0.95rem;
-      color: #ccc;
-      margin-top: 1rem;
-      letter-spacing: 0.3px;
-    }
-
-    .hero__social {
-      margin-top: 1.5rem;
-      display: flex;
-      gap: 1.2rem;
-      justify-content: center;
-    }
-
-    .hero__social a {
-      color: #bbb;
-      font-size: 1.4rem;
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.05);
-    }
-
-    .hero__social a:hover {
-      color: #fff;
-      background: rgba(255,255,255,0.15);
-      transform: translateY(-3px);
-    }
-  </style>
+  <script>
+    /* applied before paint to avoid a flash of the wrong theme */
+    (function () {
+      var stored = null;
+      try { stored = localStorage.getItem('theme'); } catch (e) {}
+      document.documentElement.setAttribute('data-theme', stored || 'dark');
+    })();
+  </script>
 </head>
+
 <body>
-
-  <div class="content-wrapper">
-  <header style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1rem;">
-    <img src="./images/profileimage.jpg" alt="Vishakh Cheruparambath" class="hero__avatar"/>
-    <h1><span class="gradient">Vishakh Cheruparambath</span></h1>
-    <p class="hero__desc">
-      Hey there! I'm Vishakh, a Master's student in Electromobility (ACES) at Friedrich-Alexander-Universität Erlangen-Nürnberg, Germany with a solid foundation in Mechanical Engineering from APJ Abdul Kalam Technological University, India. I work at the exciting intersection of AI, data engineering, and process automation - and honestly, there's no place I'd rather be.
-    </p>
-    <p class="hero__desc">
-      My professional journey has taken me from the helicopter shop floors of Hindustan Aeronautics Limited in Bangalore, India to the management sectors of Siemens Mobility and EOS GmbH, where I've built AI agents, automated workflows, and turned messy data into meaningful insights. I love turning complex problems into clean, scalable solutions which can bring real value and ROI to businesses and stakeholders.
-    </p>
-    <p class="hero__desc">
-      I'm particularly passionate about sustainable technologies and the role AI can play in transforming how businesses operate - not just making things faster, but making them smarter. I enjoy exploring the full stack of modern automation and data tools. When I'm free you'll find me engaged about space, traveling, or planning my next adventure somewhere new. I'm a firm believer that curiosity is the key that brings the mindset to do everything what I love to do.
-    </p>
-    <p class="hero__location"><i class="fas fa-map-marker-alt"></i> Fürth, Germany</p>
-    <div class="hero__social">
-      <a href="mailto:vishakh.cheruparambath@outlook.com"><i class="fas fa-envelope"></i></a>
-      <a href="https://x.com/cvishakh_" target="_blank"><i class="fab fa-twitter"></i></a>
-      <a href="https://www.linkedin.com/in/cvishakh/" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://www.xing.com/profile/Vishakh_Cheruparambath/" target="_blank"><i class="fab fa-xing"></i></a>
-      <a href="https://github.com/cvishakh" target="_blank"><i class="fab fa-github"></i></a>
+  <nav class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a class="nav-link is-active" href="index.html">about</a>
+      <a class="nav-link" href="timeline.html">profile</a>
+      <a class="nav-link" href="projects.html">projects</a>
+      <a class="nav-link" href="blogs.html">blog</a>
+      <a class="nav-link" href="photos.html">gallery</a>
+      <button class="icon-btn" id="searchBtn" aria-label="Search (Ctrl+K)">
+        <span class="kbd">ctrl k</span><i class="fas fa-magnifying-glass"></i>
+      </button>
+      <button class="icon-btn" id="themeBtn" aria-label="Toggle dark mode">
+        <i class="fas fa-moon" id="themeIcon"></i>
+      </button>
     </div>
-  </header>
+  </nav>
 
-    <main class="cards">
-      <a class="card" href="timeline.html">
-        <div class="card__visual"><img src="./images/timeline.png" alt="Preview of career journery"/></div>
-        <div class="card__label">Profile</div>
-      </a>
-      <a class="card" href="photos.html">
-        <div class="card__visual"><img src="./images/photos.png" alt="Preview of photography"/></div>
-        <div class="card__label">Gallery</div>
-      </a>
-      <a class="card" href="blogs.html">
-        <div class="card__visual"><img src="./images/blogs.png" alt="Preview of blogs and articles"/></div>
-        <div class="card__label">Blog</div>
-      </a>
-      <a class="card" href="projects.html">
-        <div class="card__visual"><img src="./images/projects.png" alt="Preview of research projects"/></div>
-        <div class="card__label">Projects</div>
-      </a>
-    </main>
+  <main class="page">
+    <section class="hero">
+      <h1 class="page-title" style="margin-bottom:1.75rem"><strong>Vishakh</strong> Cheruparambath</h1>
 
-    <section class="affiliations" aria-labelledby="affiliations-heading">
-      <h2 id="affiliations-heading">Affiliations</h2>
-      <div class="affiliations__logos">
-        <a href="https://www.fau.de/" target="_blank" rel="noopener noreferrer" title="FAU (Friedrich-Alexander-Universität)">
+      <div class="hero__grid">
+        <div class="hero__bio">
+          <p>
+            I'm a Master's student in Electromobility (ACES) program at
+            <a href="https://www.aces.study.fau.eu/" target="_blank" rel="noopener noreferrer">Friedrich-Alexander-Universität Erlangen-Nürnberg</a>,
+            currently writing my master's thesis at
+            <a href="https://www.eos.info/" target="_blank" rel="noopener noreferrer">EOS GmbH</a>
+            on vision-transformer based classification of spare parts. My interests lie at the intersection of applied AI,
+            data engineering, and process automation, focusing on agentic systems and automated workflows that make
+            industrial processes faster and more reliable.
+          </p>
+          <p>
+            Alongside my studies I have worked at EOS and
+            <a href="https://www.mobility.siemens.com/global/de/portfolio/fahrzeuge.html" target="_blank" rel="noopener noreferrer">Siemens Mobility</a>,
+            where I built AI agents, automated workflows, and turned unstructured data into usable insight. I began my career
+            on the helicopter shop floors of
+            <a href="https://hal-india.co.in/home" target="_blank" rel="noopener noreferrer">Hindustan Aeronautics Limited</a>
+            in Bangalore, India. Prior to that, I earned a Bachelor of Technology in Mechanical Engineering from
+            <a href="https://www.ktu.edu.in/" target="_blank" rel="noopener noreferrer">APJ Abdul Kalam Technological University</a>
+            in India.
+          </p>
+          <p>
+            Feel free to write to me for any inquiries related to my work or general questions.
+          </p>
+        </div>
+
+        <div>
+          <img class="hero__photo" src="./images/profileimage.jpg" alt="Vishakh Cheruparambath"/>
+          <div class="hero__meta">
+            <span><i class="fas fa-location-dot"></i> Fürth, Germany</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">news</h2>
+      <table class="news">
+        <tbody>
+          <tr>
+            <td class="date">Apr 01, 2026</td>
+            <td class="desc">Started my master's thesis on vision-transformer based spare parts classification at EOS GmbH.</td>
+          </tr>
+          <tr>
+            <td class="date">Sep 01, 2025</td>
+            <td class="desc">Joined <a href="https://www.eos.info/" target="_blank" rel="noopener noreferrer">EOS GmbH</a> as a working student in process optimization and data analysis.</td>
+          </tr>
+          <tr>
+            <td class="date">Apr 30, 2025</td>
+            <td class="desc">Completed my project thesis at <a href="https://www.faps.tf.fau.de/" target="_blank" rel="noopener noreferrer">Institute FAPS</a>.</td>
+          </tr>
+          <tr>
+            <td class="date">Jul 01, 2024</td>
+            <td class="desc">Started as a working student in process automation and data analysis at <a href="https://www.mobility.siemens.com/global/de/portfolio/fahrzeuge.html" target="_blank" rel="noopener noreferrer">Siemens Mobility</a>.</td>
+          </tr>
+          <tr>
+            <td class="date">Oct 01, 2022</td>
+            <td class="desc">Began my master's in ACES program, focus on AI and Production at FAU Erlangen-Nürnberg.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2 class="section-title">affiliations</h2>
+      <div class="affiliations">
+        <a href="https://www.fau.de/" target="_blank" rel="noopener noreferrer" title="Friedrich-Alexander-Universität Erlangen-Nürnberg">
           <img src="https://www.wp.rrze.fau.de/files/2021/11/fau-digital.svg" alt="FAU logo"/>
         </a>
         <a href="https://www.mobility.siemens.com/de/de.html" target="_blank" rel="noopener noreferrer" title="Siemens Mobility GmbH">
           <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Siemens-logo.svg" alt="Siemens logo"/>
         </a>
         <a href="https://www.eos.info" target="_blank" rel="noopener noreferrer" title="EOS GmbH">
-          <img src="./images/EOS_logo_white.svg" alt="EOS GmbH logo"/>
+          <img class="logo--white" src="./images/EOS_logo_white.svg" alt="EOS GmbH logo"/>
         </a>
       </div>
     </section>
-  </div>
 
-  <!-- Footer -->
-  <footer style="background-color: #11141f; padding: 1rem 0; text-align: center; color: #bbb; font-size: 0.9rem;">
-    © 2026 Vishakh Cheruparambath. All rights reserved.
-  </footer>
+    <div class="socials">
+      <a href="mailto:vishakh.cheruparambath@outlook.com" title="Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://github.com/cvishakh" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/cvishakh/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.xing.com/profile/Vishakh_Cheruparambath/" target="_blank" rel="noopener noreferrer" title="Xing"><i class="fab fa-xing"></i></a>
+      <a href="https://x.com/cvishakh_" target="_blank" rel="noopener noreferrer" title="X"><i class="fab fa-x-twitter"></i></a>
+    </div>
+  </main>
+
+  <footer>© 2026 Vishakh Cheruparambath. All rights reserved. Adapted from Jekyll with al-folio theme. Hosted by GitHub Pages.</footer>
+
+  <script src="./assets/js/site.js"></script>
 </body>
 </html>

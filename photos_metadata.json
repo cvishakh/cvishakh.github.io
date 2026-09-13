@@ -10,29 +10,9 @@
     "longitude": 13.7416
   },
   {
-    "filename": "500B4492-CDA8-4C3A-AC95-319D5C4A9823.jpg",
-    "latitude": 52.514325,
-    "longitude": 13.377747222222222
-  },
-  {
     "filename": "IMG_0395.jpg",
     "latitude": null,
     "longitude": null
-  },
-  {
-    "filename": "IMG_0399.jpg",
-    "latitude": null,
-    "longitude": null
-  },
-  {
-    "filename": "IMG_0404.jpg",
-    "latitude": 48.132897222222226,
-    "longitude": 11.549775
-  },
-  {
-    "filename": "IMG_0405.jpg",
-    "latitude": 48.130919444444444,
-    "longitude": 11.548647222222222
   },
   {
     "filename": "IMG_0406.jpg",
@@ -45,29 +25,9 @@
     "longitude": 10.931922222222221
   },
   {
-    "filename": "IMG_0778.jpg",
-    "latitude": 49.626913888888886,
-    "longitude": 10.938766666666666
-  },
-  {
-    "filename": "IMG_0799.jpg",
-    "latitude": null,
-    "longitude": null
-  },
-  {
     "filename": "IMG_0818.jpg",
     "latitude": null,
     "longitude": null
-  },
-  {
-    "filename": "IMG_0878.jpg",
-    "latitude": 50.93973888888888,
-    "longitude": 6.963011111111111
-  },
-  {
-    "filename": "IMG_1236.jpg",
-    "latitude": 49.60280277777778,
-    "longitude": 11.00493611111111
   },
   {
     "filename": "IMG_1525.jpg",
@@ -100,16 +60,6 @@
     "longitude": 13.376336111111112
   },
   {
-    "filename": "IMG_3405.jpg",
-    "latitude": 52.52016388888889,
-    "longitude": 13.41108611111111
-  },
-  {
-    "filename": "IMG_3780.jpg",
-    "latitude": 50.36397222222222,
-    "longitude": 7.605786111111111
-  },
-  {
     "filename": "IMG_3836.jpg",
     "latitude": 49.61226944444444,
     "longitude": 6.136722222222223
@@ -118,30 +68,5 @@
     "filename": "IMG_4128.jpg",
     "latitude": 10.010505555555556,
     "longitude": 77.20146111111112
-  },
-  {
-    "filename": "IMG_5084.jpg",
-    "latitude": 47.63357222222222,
-    "longitude": 11.91893611111111
-  },
-  {
-    "filename": "photo1.jpeg",
-    "latitude": 47.45711111111111,
-    "longitude": 10.989916611111111
-  },
-  {
-    "filename": "photo2.jpeg",
-    "latitude": null,
-    "longitude": null
-  },
-  {
-    "filename": "photo3.jpeg",
-    "latitude": 49.02146111111111,
-    "longitude": 12.097088833333334
-  },
-  {
-    "filename": "photo4.jpeg",
-    "latitude": 49.018724999999996,
-    "longitude": 12.097077777777779
   }
 ]
