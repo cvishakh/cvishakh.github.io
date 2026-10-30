@@ -34,7 +34,7 @@
 ```
 ├── index.html, timeline.html, projects.html, blogs.html, photos.html
 ├── assets/        # site.css, site.js, PDFs (references, certificates)
-├── images/        # profile photo, favicon, logos
+├── images/        # profile photo, logos
 ├── photos/        # gallery images + photos_metadata.json
 └── extract_metadata.py
 ```
