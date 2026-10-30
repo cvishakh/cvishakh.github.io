@@ -187,6 +187,16 @@ footer {
   color: var(--text); width: 12rem; padding-left: .25rem;
 }
 .news tr:hover td { background: var(--surface); }
+.news-scroll {
+  max-height: 19rem; overflow-y: auto; overscroll-behavior: contain;
+  scrollbar-width: thin; scrollbar-color: var(--border) transparent;
+}
+.news-scroll::-webkit-scrollbar { width: 8px; }
+.news-scroll::-webkit-scrollbar-track { background: transparent; }
+.news-scroll::-webkit-scrollbar-thumb {
+  background: var(--border); border-radius: 4px;
+}
+.news-scroll::-webkit-scrollbar-thumb:hover { background: var(--muted); }
 
 /* affiliations */
 .affiliations {
@@ -377,6 +387,7 @@ footer {
   .hero__grid { grid-template-columns: 1fr; gap: 1.75rem; }
   .hero__photo { max-width: 320px; margin: 0 auto; }
   .hero__meta { align-items: center; }
+  .news-scroll { max-height: 22rem; }
   .news td.date { width: auto; display: block; padding-bottom: 0; }
   .news td.desc { display: block; padding-top: .1rem; padding-bottom: .9rem; }
   .navbar__inner { gap: .9rem; }
