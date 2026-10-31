@@ -8,7 +8,6 @@
 
   <meta name="description" content="Read blog posts by Vishakh Cheruparambath on nature, hiking and wandering."/>
   <link rel="canonical" href="https://cvishakh.github.io/blogs.html"/>
-  <link rel="icon" href="./images/favicon.png" type="image/png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -45,101 +44,24 @@
   <main class="page">
     <h1 class="page-title">blog</h1>
     <p class="page-subtitle">
-      Insights into nature, hiking and wandering. Posts are pulled live from my
-      <a href="https://medium.com/@cvishakh" target="_blank" rel="noopener noreferrer">Medium</a> feed.
+      Insights into nature, hiking and wandering.
     </p>
 
-    <div class="blog-list" id="blogList">
-      <p class="state-msg">Loading posts…</p>
+    <div class="blog-list">
+      <article class="blog-item">
+        <a href="blog-rotwand.html"><img src="./images/blog/rotwand/09.jpg" alt="View from the Rotwand summit" loading="lazy" /></a>
+        <div>
+          <h3><a href="blog-rotwand.html">Von Rathaus bis Rotwand; From City hall to Red Wall</a></h3>
+          <div class="pub-date">Jun 29, 2025</div>
+          <p>Just a few days after their first hike, my friends were already planning the next adventure. This time, we’re heading to the Mangfall Mountains, in the easternmost part of the Bavarian Prealps, with the 1,884m Rotwand as our goal.</p>
+          <a class="read-more" href="blog-rotwand.html">Read post →</a>
+        </div>
+      </article>
     </div>
   </main>
 
-  <footer>© 2026 Vishakh Cheruparambath. All rights reserved. Adapted from Jekyll with al-folio theme. Hosted by GitHub Pages.</footer>
+  <footer>© 2026 Vishakh Cheruparambath. All rights reserved. Adapted from <a href="https://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a> with al-folio theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>.</footer>
 
   <script src="./assets/js/site.js"></script>
-  <script>
-    (function () {
-      var USERNAME = 'cvishakh';
-      var FEED = 'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@' + USERNAME;
-      var list = document.getElementById('blogList');
-
-      function setMessage(text) {
-        list.innerHTML = '';
-        var p = document.createElement('p');
-        p.className = 'state-msg';
-        p.textContent = text;
-        list.appendChild(p);
-      }
-
-      function stripHtml(html) {
-        var tmp = document.createElement('div');
-        tmp.innerHTML = html;
-        return (tmp.textContent || '').replace(/\s+/g, ' ').trim();
-      }
-
-      function render(posts) {
-        list.innerHTML = '';
-
-        posts.forEach(function (post) {
-          var item = document.createElement('article');
-          item.className = 'blog-item';
-
-          var imgMatch = post.content && post.content.match(/<img[^>]+src="([^">]+)"/);
-          if (imgMatch) {
-            var img = document.createElement('img');
-            img.src = imgMatch[1];
-            img.alt = post.title;
-            img.loading = 'lazy';
-            item.appendChild(img);
-          } else {
-            item.style.gridTemplateColumns = '1fr';
-          }
-
-          var body = document.createElement('div');
-
-          var h3 = document.createElement('h3');
-          h3.textContent = post.title;
-
-          var date = document.createElement('div');
-          date.className = 'pub-date';
-          date.textContent = new Date(post.pubDate).toLocaleDateString(undefined, {
-            year: 'numeric', month: 'short', day: '2-digit'
-          });
-
-          var desc = document.createElement('p');
-          var text = stripHtml(post.description || '');
-          desc.textContent = text.length > 220 ? text.slice(0, 220) + '…' : text;
-
-          var link = document.createElement('a');
-          link.className = 'read-more';
-          link.href = post.link;
-          link.target = '_blank';
-          link.rel = 'noopener noreferrer';
-          link.textContent = 'Read on Medium →';
-
-          body.append(h3, date, desc, link);
-          item.appendChild(body);
-          list.appendChild(item);
-        });
-      }
-
-      fetch(FEED)
-        .then(function (res) { return res.json(); })
-        .then(function (data) {
-          var posts = (data.items || []).filter(function (i) {
-            return i.categories && i.categories.length > 0;
-          });
-          if (!posts.length) {
-            setMessage('No posts published yet — check back soon.');
-            return;
-          }
-          render(posts);
-        })
-        .catch(function (err) {
-          console.error('Failed to load Medium blog posts', err);
-          setMessage('Could not load posts right now. Read them directly on Medium.');
-        });
-    })();
-  </script>
 </body>
 </html>

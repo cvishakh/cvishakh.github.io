@@ -331,6 +331,7 @@ footer {
   border-radius: 8px; display: block;
 }
 .blog-item h3 { font-size: 1.2rem; font-weight: 600; color: var(--heading); margin-bottom: .25rem; }
+.blog-item h3 a { color: inherit; }
 .blog-item .pub-date {
   font-size: .82rem; color: var(--muted);
   text-transform: uppercase; letter-spacing: .05em; margin-bottom: .5rem;
@@ -339,6 +340,30 @@ footer {
 .blog-item .read-more { font-size: .9rem; font-weight: 600; }
 
 .state-msg { color: var(--muted); font-size: .95rem; padding: 1.5rem 0; }
+
+/* ---------- single post ---------- */
+.post { max-width: 720px; margin: 0 auto; }
+.post__back { display: inline-block; font-size: .9rem; margin-bottom: 1.5rem; }
+.post__meta {
+  font-size: .82rem; color: var(--muted);
+  text-transform: uppercase; letter-spacing: .05em; margin-bottom: 2.5rem;
+}
+.post h2 {
+  font-size: 1.4rem; font-weight: 600; color: var(--heading);
+  margin: 2.5rem 0 .8rem;
+}
+.post p { font-size: 1.05rem; line-height: 1.75; margin-bottom: 1.1rem; }
+.post blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 1.1rem; margin: 0 0 1.1rem;
+  color: var(--muted); font-style: italic;
+}
+.post figure { margin: 1.75rem 0; }
+.post figure img { width: 100%; height: auto; border-radius: 8px; display: block; }
+.post figcaption {
+  font-size: .88rem; color: var(--muted);
+  text-align: center; margin-top: .6rem;
+}
 
 /* =========================================================
    Photos page

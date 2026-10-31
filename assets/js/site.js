@@ -42,6 +42,7 @@
     { title: 'projects', sub: 'research and side projects', url: 'projects.html' },
     { title: 'blog', sub: 'articles on nature, hiking and wandering', url: 'blogs.html' },
     { title: 'gallery', sub: 'photography from the road', url: 'photos.html' },
+    { title: 'Von Rathaus bis Rotwand', sub: 'hiking the Rotwand from Spitzingsee — blog', url: 'blog-rotwand.html' },
     { title: 'EOS GmbH', sub: 'master thesis and working student — profile', url: 'timeline.html' },
     { title: 'Siemens Mobility', sub: 'process automation and data analysis — profile', url: 'timeline.html' },
     { title: 'Institute FAPS', sub: 'project thesis, gesture recognition — profile', url: 'timeline.html' },
